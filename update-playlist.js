@@ -141,80 +141,71 @@ function convertJioJson(json) {
     return "";
   }
 
-  console.log("🔍 JIO JSON type:", Array.isArray(json) ? "array" : typeof json);
-  // Log a sample to see structure (first 2 items if array, first 2 keys if object)
-  if (Array.isArray(json)) {
-    console.log("📦 JIO array sample:", JSON.stringify(json.slice(0, 2)).substring(0, 300));
-  } else if (typeof json === 'object') {
-    const keys = Object.keys(json).slice(0, 2);
-    const sample = {};
-    keys.forEach(k => sample[k] = json[k]);
-    console.log("📦 JIO object sample:", JSON.stringify(sample).substring(0, 300));
-  }
-
   const out = [];
 
-  // Helper to safely extract __hdnea__ from a URL string
+  // Helper to extract __hdnea__ from URL
   const extractHdnea = (url) => {
     if (typeof url !== 'string') return "";
     const match = url.match(/__hdnea__=([^&]*)/);
     return match ? `hdnea=${match[1]}` : "";
   };
 
-  // Case 1: Array of channels
+  // Normalize input to an array of channel objects
+  let channels = [];
   if (Array.isArray(json)) {
-    json.forEach((item, index) => {
-      if (!item || typeof item !== 'object') return;
-      const url = item.url || item.m3u8 || item.stream_url || item.link;
-      if (!url) return;
-
-      const channelName = item.name || item.title || item.channel_name || `Channel ${index+1}`;
-      const logo = item.logo || item.tvg_logo || item.image || "";
-      const kid = item.kid || item.key_id || "";
-      const key = item.key || item.drm_key || "";
-      const userAgent = item.user_agent || item.ua || "";
-
-      out.push(
-        `#EXTINF:-1 tvg-id="${item.id || index+1}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${channelName}`,
-        `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
-        `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
-        `#EXTHTTP:${JSON.stringify({
-          Cookie: extractHdnea(url),
-          "User-Agent": userAgent,
-        })}`,
-        url
-      );
-    });
+    channels = json;
+  } else if (typeof json === 'object') {
+    // Convert object with numeric keys to array
+    channels = Object.values(json);
   }
-  // Case 2: Object with channel IDs as keys
-  else if (typeof json === 'object') {
-    for (const id in json) {
-      const ch = json[id];
-      if (!ch || typeof ch !== 'object') continue;
 
-      const url = ch.url || ch.m3u8 || ch.stream_url || ch.link;
-      if (!url) continue;
+  channels.forEach((ch, index) => {
+    if (!ch || typeof ch !== 'object') return;
 
-      const channelName = ch.name || ch.title || ch.channel_name || `Channel ${id}`;
-      const logo = ch.logo || ch.tvg_logo || ch.image || "";
-      const kid = ch.kid || ch.key_id || "";
-      const key = ch.key || ch.drm_key || "";
-      const userAgent = ch.user_agent || ch.ua || "";
+    // Try to find a URL (common field names)
+    const url = ch.url || ch.m3u8 || ch.stream_url || ch.link || ch.manifest;
+    if (!url || typeof url !== 'string') return;
 
-      out.push(
-        `#EXTINF:-1 tvg-id="${id}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${channelName}`,
-        `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
-        `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
-        `#EXTHTTP:${JSON.stringify({
-          Cookie: extractHdnea(url),
-          "User-Agent": userAgent,
-        })}`,
-        url
-      );
+    const name = ch.name || ch.title || ch.channel_name || ch.channel || `Channel ${index + 1}`;
+    const logo = ch.logo || ch.tvg_logo || ch.image || ch.logo_url || "";
+    const tvgId = ch.id || ch.tvg_id || index + 1;
+
+    // DRM info (may be missing)
+    const kid = ch.kid || ch.key_id || "";
+    const key = ch.key || ch.drm_key || "";
+    const hasDrm = kid && key;
+
+    // User agent and cookie (may be missing)
+    const userAgent = ch.user_agent || ch.ua || "";
+    const cookie = extractHdnea(url) || ch.cookie || "";
+
+    // Build EXTINF line
+    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${name}`;
+    out.push(extinf);
+
+    // Add KODIPROP lines only if DRM info exists
+    if (hasDrm) {
+      out.push(`#KODIPROP:inputstream.adaptive.license_type=clearkey`);
+      out.push(`#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`);
     }
-  }
 
-  console.log(`✅ JIO: Processed ${out.length / 5} channels.`);
+    // Add EXTHTTP only if at least one header is meaningful
+    if (cookie || userAgent) {
+      const headers = {};
+      if (cookie) headers.Cookie = cookie;
+      if (userAgent) headers["User-Agent"] = userAgent;
+      out.push(`#EXTHTTP:${JSON.stringify(headers)}`);
+    }
+
+    // Finally the URL
+    out.push(url);
+  });
+
+  if (out.length === 0) {
+    console.warn("⚠️ No valid channels found in JIO source.");
+  } else {
+    console.log(`✅ JIO: Processed ${out.length / (out.length > 0 ? (out[0].startsWith('#KODIPROP') ? 5 : (out.some(l => l.startsWith('#EXTHTTP')) ? 4 : 3)) : 1)} channels.`);
+  }
   return out.join("\n");
 }
 
