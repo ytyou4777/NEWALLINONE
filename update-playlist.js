@@ -11,7 +11,7 @@ const SOURCES = {
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
-  SPORTS_JSON: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/index.m3u",
+  SPORTS_JSON: "",
 };
 
 // ================= PLAYLIST HEADER =================
