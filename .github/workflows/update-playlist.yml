@@ -2,8 +2,8 @@ name: Update Playlist
 
 on:
   schedule:
-    # Runs every 6 hours (you can change the cron expression)
-    - cron: '*/10 * * * *'    
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch:      # Allows manual trigger from the Actions tab
   push:
     branches: [ main ]    # Optional: run on push to main for testing
