@@ -1,0 +1,43 @@
+name: Update Playlist
+
+on:
+  schedule:
+    # Runs every 6 hours (you can change the cron expression)
+    - cron: '*/10 * * * *'    
+  workflow_dispatch:      # Allows manual trigger from the Actions tab
+  push:
+    branches: [ main ]    # Optional: run on push to main for testing
+
+permissions:
+  contents: write         # Allows the workflow to push commits
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Generate playlist
+        run: node update-playlist.js
+
+      - name: Check for changes and commit
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add stream.m3u
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update playlist [skip ci]"
+            git push
+          fi
