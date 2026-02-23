@@ -143,14 +143,12 @@ function convertJioJson(json) {
 
   const out = [];
 
-  // Helper to extract __hdnea__ from URL
   const extractHdnea = (url) => {
     if (typeof url !== 'string') return "";
     const match = url.match(/__hdnea__=([^&]*)/);
     return match ? `hdnea=${match[1]}` : "";
   };
 
-  // Normalize input to an array of channel objects
   let channels = [];
   if (Array.isArray(json)) {
     channels = json;
@@ -161,7 +159,6 @@ function convertJioJson(json) {
   channels.forEach((ch, index) => {
     if (!ch || typeof ch !== 'object') return;
 
-    // Try to find a URL (common field names)
     const url = ch.url || ch.m3u8 || ch.stream_url || ch.link || ch.manifest;
     if (!url || typeof url !== 'string') return;
 
@@ -169,46 +166,37 @@ function convertJioJson(json) {
     const logo = ch.logo || ch.tvg_logo || ch.image || ch.logo_url || "";
     const tvgId = ch.id || ch.tvg_id || index + 1;
 
-    // DRM info – check for drmScheme and drmLicense
     const drmScheme = ch.drmScheme || ch.drm_scheme || "";
     const drmLicense = ch.drmLicense || ch.drm_license || ch.license || "";
 
     let kid = "", key = "";
     if (drmLicense && typeof drmLicense === 'string') {
-      // Expected format: "kid:key" (KID first, then key)
       const parts = drmLicense.split(':');
       if (parts.length === 2) {
-        // Assume first part is KID, second is KEY (common for Kodi)
         kid = parts[0].trim();
         key = parts[1].trim();
       } else {
         console.warn(`⚠️ Unexpected drmLicense format: ${drmLicense}`);
       }
     } else {
-      // Fallback to individual kid/key fields
       kid = ch.kid || ch.key_id || "";
       key = ch.key || ch.drm_key || "";
     }
 
-    const hasDrm = kid && key;  // Both required for valid DRM
+    const hasDrm = kid && key;
 
-    // User agent and cookie (may be missing)
     const userAgent = ch.user_agent || ch.ua || "";
     const cookie = extractHdnea(url) || ch.cookie || "";
 
-    // Build EXTINF line
     let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIOTV+",${name}`;
     out.push(extinf);
 
-    // Add KODIPROP lines only if DRM info exists
     if (hasDrm) {
-      // Use drmScheme if provided and valid, otherwise default to "clearkey"
       const licenseType = (drmScheme && drmScheme.toLowerCase() === "clearkey") ? "clearkey" : "clearkey";
       out.push(`#KODIPROP:inputstream.adaptive.license_type=${licenseType}`);
       out.push(`#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`);
     }
 
-    // Add EXTHTTP only if at least one header is meaningful
     if (cookie || userAgent) {
       const headers = {};
       if (cookie) headers.Cookie = cookie;
@@ -216,19 +204,18 @@ function convertJioJson(json) {
       out.push(`#EXTHTTP:${JSON.stringify(headers)}`);
     }
 
-    // Finally the URL
     out.push(url);
   });
 
   if (out.length === 0) {
     console.warn("⚠️ No valid channels found in JIO source.");
   } else {
-    // Rough count of channels (each channel contributes at least EXTINF + URL)
     const channelCount = out.filter(line => line.startsWith('#EXTINF')).length;
     console.log(`✅ JIO: Processed ${channelCount} channels.`);
   }
   return out.join("\n");
 }
+
 // ================= SONYLIV =================
 function convertSonyliv(json) {
   if (!Array.isArray(json.matches)) return "";
@@ -280,7 +267,37 @@ function convertIccTv(json) {
   return out.join("\n");
 }
 
-// ================= SPORTS JSON =================
+// ================= SPORTS (NEW – HANDLES M3U OR JSON) =================
+function handleSportsData(data) {
+  if (!data) return "";
+
+  // If it's a string and looks like an M3U, return it as-is (with minor cleanup)
+  if (typeof data === 'string' && data.trim().startsWith('#EXTM3U')) {
+    console.log("✅ Sports: Detected raw M3U, inserting directly.");
+    // Remove any leading #EXTM3U lines except the first one (just in case)
+    let cleaned = data.trim();
+    // Optionally, we could rewrite group titles here, but for simplicity, pass through.
+    return cleaned;
+  }
+
+  // Otherwise, try to parse as JSON (old format)
+  try {
+    if (typeof data === 'string') {
+      data = JSON.parse(data);
+    }
+    // Check if it has the old structure with 'streams'
+    if (data && Array.isArray(data.streams)) {
+      console.log("✅ Sports: Detected JSON format, converting.");
+      return convertSportsJson(data); // use the old converter
+    }
+  } catch (e) {
+    console.warn("⚠️ Sports data is neither valid M3U nor expected JSON.");
+  }
+
+  return "";
+}
+
+// Old JSON converter (kept for compatibility)
 function convertSportsJson(json) {
   if (!json || !Array.isArray(json.streams)) return "";
   const out = [];
@@ -354,8 +371,13 @@ async function run() {
   const jio = await safeFetch(SOURCES.JIO_JSON, "JIO");
   if (jio) out.push(section("JIO ⭕ | Live TV"), convertJioJson(jio));
 
-  const sports = await safeFetch(SOURCES.SPORTS_JSON, "Sports");
-  if (sports) out.push(section("T20 World Cup | Live Matches"), convertSportsJson(sports));
+  const sportsData = await safeFetch(SOURCES.SPORTS_JSON, "Sports");
+  if (sportsData) {
+    const sportsContent = handleSportsData(sportsData);
+    if (sportsContent) {
+      out.push(section("T20 World Cup | Live Matches"), sportsContent);
+    }
+  }
 
   const icc = await safeFetch(SOURCES.ICC_TV_JSON, "ICC TV");
   if (icc) out.push(section("ICC TV"), convertIccTv(icc));
