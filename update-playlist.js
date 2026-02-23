@@ -8,7 +8,7 @@ const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
   JIO_JSON: "https://jtv.pfy.workers.dev/",
-  SONYLIV_JSON: "https://raw.githubusercontent.com/cloudplay97/m3u/refs/heads/main/sony.m3u",
+  SONYLIV_M3U: "https://raw.githubusercontent.com/cloudplay97/m3u/refs/heads/main/sony.m3u", // renamed for clarity
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
   SPORTS_JSON: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/index.m3u",
@@ -216,8 +216,35 @@ function convertJioJson(json) {
   return out.join("\n");
 }
 
-// ================= SONYLIV =================
-function convertSonyliv(json) {
+// ================= SONYLIV (HANDLES M3U OR JSON) =================
+function handleSonylivData(data) {
+  if (!data) return "";
+
+  // If it's a string and looks like M3U, return it as-is
+  if (typeof data === 'string' && data.trim().startsWith('#EXTM3U')) {
+    console.log("✅ SonyLiv: Detected raw M3U, inserting directly.");
+    return data.trim();
+  }
+
+  // Otherwise, try to parse as JSON (old format)
+  try {
+    if (typeof data === 'string') {
+      data = JSON.parse(data);
+    }
+    // Check if it has the old structure with 'matches'
+    if (data && Array.isArray(data.matches)) {
+      console.log("✅ SonyLiv: Detected JSON format, converting.");
+      return convertSonylivJson(data);
+    }
+  } catch (e) {
+    console.warn("⚠️ SonyLiv data is neither valid M3U nor expected JSON.");
+  }
+
+  return "";
+}
+
+// Old JSON converter for SonyLiv (kept for compatibility)
+function convertSonylivJson(json) {
   if (!Array.isArray(json.matches)) return "";
   return json.matches
     .filter((m) => m.isLive)
@@ -267,28 +294,22 @@ function convertIccTv(json) {
   return out.join("\n");
 }
 
-// ================= SPORTS (NEW – HANDLES M3U OR JSON) =================
+// ================= SPORTS (HANDLES M3U OR JSON) =================
 function handleSportsData(data) {
   if (!data) return "";
 
-  // If it's a string and looks like an M3U, return it as-is (with minor cleanup)
   if (typeof data === 'string' && data.trim().startsWith('#EXTM3U')) {
     console.log("✅ Sports: Detected raw M3U, inserting directly.");
-    // Remove any leading #EXTM3U lines except the first one (just in case)
-    let cleaned = data.trim();
-    // Optionally, we could rewrite group titles here, but for simplicity, pass through.
-    return cleaned;
+    return data.trim();
   }
 
-  // Otherwise, try to parse as JSON (old format)
   try {
     if (typeof data === 'string') {
       data = JSON.parse(data);
     }
-    // Check if it has the old structure with 'streams'
     if (data && Array.isArray(data.streams)) {
       console.log("✅ Sports: Detected JSON format, converting.");
-      return convertSportsJson(data); // use the old converter
+      return convertSportsJson(data);
     }
   } catch (e) {
     console.warn("⚠️ Sports data is neither valid M3U nor expected JSON.");
@@ -297,7 +318,7 @@ function handleSportsData(data) {
   return "";
 }
 
-// Old JSON converter (kept for compatibility)
+// Old JSON converter for Sports
 function convertSportsJson(json) {
   if (!json || !Array.isArray(json.streams)) return "";
   const out = [];
@@ -382,8 +403,14 @@ async function run() {
   const icc = await safeFetch(SOURCES.ICC_TV_JSON, "ICC TV");
   if (icc) out.push(section("ICC TV"), convertIccTv(icc));
 
-  const sony = await safeFetch(SOURCES.SONYLIV_JSON, "SonyLiv");
-  if (sony) out.push(section("SonyLiv | Sports"), convertSonyliv(sony));
+  // ✅ SonyLiv now uses the new handler
+  const sonyData = await safeFetch(SOURCES.SONYLIV_M3U, "SonyLiv");
+  if (sonyData) {
+    const sonyContent = handleSonylivData(sonyData);
+    if (sonyContent) {
+      out.push(section("SonyLiv | Sports"), sonyContent);
+    }
+  }
 
   const fan = await safeFetch(SOURCES.FANCODE_JSON, "FanCode");
   if (fan) out.push(section("FanCode | Sports"), convertFancode(fan));
