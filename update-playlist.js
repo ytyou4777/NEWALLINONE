@@ -197,7 +197,7 @@ function convertJioJson(json) {
     const cookie = extractHdnea(url) || ch.cookie || "";
 
     // Build EXTINF line
-    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIOHOTSTAR",${name}`;
+    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIOTV+",${name}`;
     out.push(extinf);
 
     // Add KODIPROP lines only if DRM info exists
