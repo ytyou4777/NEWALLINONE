@@ -96,7 +96,7 @@ function convertHotstar(data) {
       const logo = logoMatch ? logoMatch[1] : "";
       const lastComma = line.lastIndexOf(',');
       const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
-      currentInf = `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
+      currentInf = `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`;
     } 
     else if (line.startsWith('http')) {
       const cookie = getRawParam(line, 'Cookie');
@@ -197,7 +197,7 @@ function convertJioJson(json) {
     const cookie = extractHdnea(url) || ch.cookie || "";
 
     // Build EXTINF line
-    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${name}`;
+    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIOHOTSTAR",${name}`;
     out.push(extinf);
 
     // Add KODIPROP lines only if DRM info exists
