@@ -7,11 +7,11 @@ const OUTPUT_FILE = "stream.m3u";
 const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?vot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",          // updated
-  SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
+  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",
+  SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u",
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
-  SPORTS_JSON: "",
+  SPORTS_JSON: "", // empty – will be skipped
 };
 
 // ================= PLAYLIST HEADER =================
@@ -33,6 +33,53 @@ const PLAYLIST_FOOTER = `
 // ================= SECTION =================
 function section(title) {
   return `\n# ---------------=== ${title} ===-------------------\n`;
+}
+
+// ================= GENERIC M3U PROCESSOR =================
+/**
+ * Processes raw M3U data, prepending "Clarity TV | " to every group-title.
+ * If a line has no group-title, a default one is added.
+ * @param {string} data - Raw M3U content
+ * @param {string} defaultGroup - Default group to use if none exists (e.g. "Clarity TV | JIOTV+")
+ * @returns {string} Processed M3U content
+ */
+function processM3U(data, defaultGroup) {
+  if (!data) return "";
+  if (typeof data !== 'string') {
+    console.warn("⚠️ Data is not a string, skipping.");
+    return "";
+  }
+
+  const lines = data.split('\n');
+  const out = [];
+
+  for (let line of lines) {
+    line = line.trimRight(); // keep indentation but remove trailing spaces
+    if (line.startsWith('#EXTINF:')) {
+      // Does it already have a group-title?
+      if (line.includes('group-title=')) {
+        // Prepend our brand to the existing group
+        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
+          return `group-title="Clarity TV | ${group}"`;
+        });
+      } else {
+        // No group-title, add one after the duration
+        const commaIndex = line.indexOf(',');
+        if (commaIndex !== -1) {
+          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
+        } else {
+          // Malformed line – just append at the end
+          line = line + ` group-title="${defaultGroup}"`;
+        }
+      }
+      out.push(line);
+    } else {
+      out.push(line);
+    }
+  }
+
+  console.log(`✅ Processed M3U with default group "${defaultGroup}"`);
+  return out.join('\n');
 }
 
 // ================= HOTSTAR =================
@@ -132,83 +179,6 @@ function convertHotstar(data) {
 
   console.log(`✅ Processed ${out.length / 4} Hotstar channels.`);
   return out.join("\n");
-}
-
-// ================= JIO M3U HANDLER =================
-function handleJioM3U(data) {
-  if (!data) return "";
-  if (typeof data !== 'string') {
-    console.warn("⚠️ JIO data is not a string, skipping.");
-    return "";
-  }
-
-  const lines = data.split('\n');
-  const out = [];
-  const defaultGroup = "| JIOTV+";
-
-  for (let line of lines) {
-    line = line.trimRight(); // preserve indentation but remove trailing spaces
-    if (line.startsWith('#EXTINF:')) {
-      // Prepend our group prefix to existing group-title, or add it if missing
-      if (line.includes('group-title=')) {
-        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title=" ${group}"`;
-        });
-      } else {
-        // No group-title, insert one after the duration
-        const commaIndex = line.indexOf(',');
-        if (commaIndex !== -1) {
-          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
-        } else {
-          // Malformed line, just add at the end
-          line = line + ` group-title="${defaultGroup}"`;
-        }
-      }
-      out.push(line);
-    } else {
-      out.push(line);
-    }
-  }
-
-  console.log("✅ JIO M3U processed with group-title prefix.");
-  return out.join('\n');
-}
-
-// ================= SONY M3U HANDLER =================
-function handleSonyM3U(data) {
-  if (!data) return "";
-  if (typeof data !== 'string') {
-    console.warn("⚠️ Sony data is not a string, skipping.");
-    return "";
-  }
-
-  const lines = data.split('\n');
-  const out = [];
-  const defaultGroup = "Clarity TV | SonyLiv | Sports";
-
-  for (let line of lines) {
-    line = line.trimRight();
-    if (line.startsWith('#EXTINF:')) {
-      if (line.includes('group-title=')) {
-        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title="Clarity TV | SONYLIV | ${group}"`;
-        });
-      } else {
-        const commaIndex = line.indexOf(',');
-        if (commaIndex !== -1) {
-          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
-        } else {
-          line = line + ` group-title="${defaultGroup}"`;
-        }
-      }
-      out.push(line);
-    } else {
-      out.push(line);
-    }
-  }
-
-  console.log("✅ Sony M3U processed with group-title prefix.");
-  return out.join('\n');
 }
 
 // ================= FANCODE =================
@@ -340,18 +310,25 @@ async function run() {
   const hotstar = await safeFetch(SOURCES.HOTSTAR_M3U, "Hotstar");
   if (hotstar) out.push(section("Clarity TV | JIOHOTSTAR"), hotstar);
 
-  const zee5 = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
-  if (zee5) out.push(section("Clarity TV | ZEE5 | Live"), zee5);
+  // ZEE5 M3U – now processed with generic handler
+  const zee5Data = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
+  if (zee5Data) {
+    const zee5Content = processM3U(zee5Data, "Clarity TV | ZEE5 | Live");
+    if (zee5Content) {
+      out.push(section("Clarity TV | ZEE5 | Live"), zee5Content);
+    }
+  }
 
-  // JIO M3U
+  // JIO M3U – processed
   const jioData = await safeFetch(SOURCES.JIO_M3U, "JIO");
   if (jioData) {
-    const jioContent = handleJioM3U(jioData);
+    const jioContent = processM3U(jioData, "Clarity TV | JIOTV+");
     if (jioContent) {
       out.push(section("Clarity TV | JIOTV+"), jioContent);
     }
   }
 
+  // Sports (currently empty)
   const sportsData = await safeFetch(SOURCES.SPORTS_JSON, "Sports");
   if (sportsData) {
     const sportsContent = handleSportsData(sportsData);
@@ -363,10 +340,10 @@ async function run() {
   const icc = await safeFetch(SOURCES.ICC_TV_JSON, "ICC TV");
   if (icc) out.push(section("ICC TV"), convertIccTv(icc));
 
-  // Sony M3U
+  // Sony M3U – processed
   const sonyData = await safeFetch(SOURCES.SONYLIV_M3U, "SonyLiv");
   if (sonyData) {
-    const sonyContent = handleSonyM3U(sonyData);
+    const sonyContent = processM3U(sonyData, "Clarity TV | SonyLiv | Sports");
     if (sonyContent) {
       out.push(section("Clarity TV | SonyLiv"), sonyContent);
     }
