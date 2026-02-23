@@ -7,7 +7,7 @@ const OUTPUT_FILE = "stream.m3u";
 const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  JIO_JSON: "https://jtv.pfy.workers.dev/",                     // ✅ Updated JIO link
+  JIO_JSON: "https://jtv.pfy.workers.dev/",
   SONYLIV_JSON: "https://raw.githubusercontent.com/drmlive/sliv-live-events/main/sonyliv.json",
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
@@ -37,7 +37,6 @@ function section(title) {
 
 // ================= HOTSTAR =================
 function convertHotstar(data) {
-  // 1. Handle JSON format (Legacy/Backup)
   if (typeof data !== 'string' || !data.trim().startsWith('#EXTM3U')) {
     let json = data;
     if (!Array.isArray(json) && typeof json === 'object') {
@@ -73,20 +72,17 @@ function convertHotstar(data) {
     return "";
   }
 
-  // 2. Handle RAW M3U String
   console.log("✅ Hotstar: Parsing and reformatting raw M3U...");
   const lines = data.split('\n');
   const out = [];
   let currentInf = "";
 
-  // Helper to get RAW parameter value (No Decoding)
   const getRawParam = (url, name) => {
     const regex = new RegExp(`(?:[?&%7C])${name}=([^&]*)`);
     const match = url.match(regex);
     return match ? match[1] : "";
   };
 
-  // Default values
   const DEFAULT_UA = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
   const DEFAULT_ORIGIN = "https://www.hotstar.com";
   const DEFAULT_REFERER = "https://www.hotstar.com/";
@@ -138,34 +134,87 @@ function convertHotstar(data) {
   return out.join("\n");
 }
 
-// ================= JIO (FIXED) =================
+// ================= JIO (FLEXIBLE & DEBUGGED) =================
 function convertJioJson(json) {
-  if (!json) return "";
+  if (!json) {
+    console.warn("⚠️ JIO JSON is empty or null");
+    return "";
+  }
+
+  console.log("🔍 JIO JSON type:", Array.isArray(json) ? "array" : typeof json);
+  // Log a sample to see structure (first 2 items if array, first 2 keys if object)
+  if (Array.isArray(json)) {
+    console.log("📦 JIO array sample:", JSON.stringify(json.slice(0, 2)).substring(0, 300));
+  } else if (typeof json === 'object') {
+    const keys = Object.keys(json).slice(0, 2);
+    const sample = {};
+    keys.forEach(k => sample[k] = json[k]);
+    console.log("📦 JIO object sample:", JSON.stringify(sample).substring(0, 300));
+  }
+
   const out = [];
 
-  for (const id in json) {
-    const ch = json[id];
-    // Skip invalid entries
-    if (!ch || typeof ch !== 'object') continue;
-    
-    const url = ch.url;
-    if (!url || typeof url !== 'string') continue; // Skip if no valid URL
+  // Helper to safely extract __hdnea__ from a URL string
+  const extractHdnea = (url) => {
+    if (typeof url !== 'string') return "";
+    const match = url.match(/__hdnea__=([^&]*)/);
+    return match ? `hdnea=${match[1]}` : "";
+  };
 
-    // Safely extract __hdnea__ from URL if present
-    const hdneaMatch = url.match(/__hdnea__=([^&]*)/);
-    const cookie = hdneaMatch ? `hdnea=${hdneaMatch[1]}` : "";
+  // Case 1: Array of channels
+  if (Array.isArray(json)) {
+    json.forEach((item, index) => {
+      if (!item || typeof item !== 'object') return;
+      const url = item.url || item.m3u8 || item.stream_url || item.link;
+      if (!url) return;
 
-    out.push(
-      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo || ''}" group-title="Clarity TV | JIO ⭕ | Live TV",${ch.channel_name || 'Unknown'}`,
-      `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
-      `#KODIPROP:inputstream.adaptive.license_key=${ch.kid || ''}:${ch.key || ''}`,
-      `#EXTHTTP:${JSON.stringify({
-        Cookie: cookie,
-        "User-Agent": ch.user_agent || '',
-      })}`,
-      url
-    );
+      const channelName = item.name || item.title || item.channel_name || `Channel ${index+1}`;
+      const logo = item.logo || item.tvg_logo || item.image || "";
+      const kid = item.kid || item.key_id || "";
+      const key = item.key || item.drm_key || "";
+      const userAgent = item.user_agent || item.ua || "";
+
+      out.push(
+        `#EXTINF:-1 tvg-id="${item.id || index+1}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${channelName}`,
+        `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
+        `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
+        `#EXTHTTP:${JSON.stringify({
+          Cookie: extractHdnea(url),
+          "User-Agent": userAgent,
+        })}`,
+        url
+      );
+    });
   }
+  // Case 2: Object with channel IDs as keys
+  else if (typeof json === 'object') {
+    for (const id in json) {
+      const ch = json[id];
+      if (!ch || typeof ch !== 'object') continue;
+
+      const url = ch.url || ch.m3u8 || ch.stream_url || ch.link;
+      if (!url) continue;
+
+      const channelName = ch.name || ch.title || ch.channel_name || `Channel ${id}`;
+      const logo = ch.logo || ch.tvg_logo || ch.image || "";
+      const kid = ch.kid || ch.key_id || "";
+      const key = ch.key || ch.drm_key || "";
+      const userAgent = ch.user_agent || ch.ua || "";
+
+      out.push(
+        `#EXTINF:-1 tvg-id="${id}" tvg-logo="${logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${channelName}`,
+        `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
+        `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
+        `#EXTHTTP:${JSON.stringify({
+          Cookie: extractHdnea(url),
+          "User-Agent": userAgent,
+        })}`,
+        url
+      );
+    }
+  }
+
+  console.log(`✅ JIO: Processed ${out.length / 5} channels.`);
   return out.join("\n");
 }
 
