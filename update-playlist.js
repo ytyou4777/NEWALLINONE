@@ -7,31 +7,31 @@ const OUTPUT_FILE = "stream.m3u";
 const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  EXTRA_M3U: "https://od.lk/s/MzZfODQzNTQ1Nzlf/raw?=m3u",
-  JIO_JSON: "https://raw.githubusercontent.com/vaathala00/jo/main/stream.jso",
+  // EXTRA_M3U: "https://od.lk/s/MzZfODQzNTQ1Nzlf/raw?=m3u",
+  JIO_JSON: "https://ztv.pfy.workers.dev/",
   SONYLIV_JSON: "https://raw.githubusercontent.com/drmlive/sliv-live-events/main/sonyliv.json",
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
-  ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
-  SPORTS_JSON: "https://sports.vodep39240327.workers.dev/sports.jso",
+  // ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
+  // SPORTS_JSON: "https://sports.vodep39240327.workers.dev/sports.jso",
 
 // ✅ NEW LOCAL TAMIL CHANNEL PAGES
-  LOCAL_JSON: [
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/2",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/3",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/4",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/5",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/6",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/7",
-  ],
+//   LOCAL_JSON: [
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/2",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/3",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/4",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/5",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/6",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/local-tamil-tv/page/7",
+//   ],
 
-// ✅ NEW LOCAL TELUGU CHANNEL PAGES
-  TELUGU_JSON: [
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/2",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/3",
-    "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/4",
-  ],
+// // ✅ NEW LOCAL TELUGU CHANNEL PAGES
+//   TELUGU_JSON: [
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/2",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/3",
+//     "https://b4u.vodep39240327.workers.dev/1.json?url=https://tulnit.com/channel/telugu-tv/page/4",
+//   ],
 
 };
 
@@ -40,14 +40,14 @@ const PLAYLIST_HEADER = `#EXTM3U
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_IN4.xml.gz"
 #EXTM3U x-tvg-url="https://mitthu786.github.io/tvepg/tataplay/epg.xml.gz"
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
-# ===== Vaathala Playlist =====
-# Join Telegram: @vaathala1
+# ===== Clarity TV Playlist =====
+# Join Telegram: @watch_clarity
 `;
 
 // ================= PLAYLIST FOOTER =================
 const PLAYLIST_FOOTER = `
 # =========================================
-# This m3u link is only for educational purposes
+# This m3u link is Made By Clarity TV
 # =========================================
 `;
 
@@ -58,47 +58,47 @@ function section(title) {
 }
 
 
-// ================= LOCAL TELUGU JSON =================
-function convertLocalTelugu(jsonArray) {
-  if (!Array.isArray(jsonArray)) return "";
+// // ================= LOCAL TELUGU JSON =================
+// function convertLocalTelugu(jsonArray) {
+//   if (!Array.isArray(jsonArray)) return "";
 
-  const out = [];
+//   const out = [];
 
-  jsonArray.forEach((ch) => {
-    if (!ch.stream_url) return;
+//   jsonArray.forEach((ch) => {
+//     if (!ch.stream_url) return;
 
-    const name = ch.title || "Unknown";
-    const logo = ch.image || "";
+//     const name = ch.title || "Unknown";
+//     const logo = ch.image || "";
 
-    out.push(
-      `#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="VT 📺 | Local Channel Telugu",${name}`,
-      ch.stream_url
-    );
-  });
+//     out.push(
+//       `#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="Clarity TV📺 | Local Channel Telugu",${name}`,
+//       ch.stream_url
+//     );
+//   });
 
-  return out.join("\n");
-}
+//   return out.join("\n");
+// }
 
-// ================= LOCAL TAMIL JSON =================
-function convertLocalTamil(jsonArray) {
-  if (!Array.isArray(jsonArray)) return "";
+// // ================= LOCAL TAMIL JSON =================
+// function convertLocalTamil(jsonArray) {
+//   if (!Array.isArray(jsonArray)) return "";
 
-  const out = [];
+//   const out = [];
 
-  jsonArray.forEach((ch) => {
-    if (!ch.stream_url) return;
+//   jsonArray.forEach((ch) => {
+//     if (!ch.stream_url) return;
 
-    const name = ch.title || "Unknown";
-    const logo = ch.image || "";
+//     const name = ch.title || "Unknown";
+//     const logo = ch.image || "";
 
-    out.push(
-      `#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="VT 📺 | Local Channel Tamil",${name}`,
-      ch.stream_url
-    );
-  });
+//     out.push(
+//       `#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="Clarity TV 📺 | Local Channel Tamil",${name}`,
+//       ch.stream_url
+//     );
+//   });
 
-  return out.join("\n");
-}
+//   return out.join("\n");
+// }
 
 
 // ================= HOTSTAR =================
@@ -128,7 +128,7 @@ function convertHotstar(data) {
           
           // Updated format to match desired output order
           out.push(
-            `#EXTINF:-1 group-title="VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
+            `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
             `#EXTVLCOPT:http-user-agent=${userAgent}`,
             `#EXTHTTP:${JSON.stringify({ cookie: cookie, Origin: "https://www.hotstar.com", Referer: "https://www.hotstar.com/" })}`,
             urlObj.toString()
@@ -175,7 +175,7 @@ function convertHotstar(data) {
       const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
 
       // 3. Rebuild line in desired order: group-title -> tvg-logo -> space -> comma -> name
-      currentInf = `#EXTINF:-1 group-title="VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
+      currentInf = `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
       // --- CHANGE END ---
     } 
     else if (line.startsWith('http')) {
@@ -225,7 +225,7 @@ function convertJioJson(json) {
     const cookie = `hdnea=${ch.url.match(/__hdnea__=([^&]*)/)?.[1] || ""}`;
 
     out.push(
-      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo}" group-title="JIO ⭕ | Live TV",${ch.channel_name}`,
+      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${ch.channel_name}`,
       `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
       `#KODIPROP:inputstream.adaptive.license_key=${ch.kid}:${ch.key}`,
       `#EXTHTTP:${JSON.stringify({
@@ -246,7 +246,7 @@ function convertSonyliv(json) {
     .map((m) => {
       const url = m.dai_url || m.pub_url;
       if (!url) return null;
-      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="SonyLiv | Sports",${m.match_name}\n${url}`;
+      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="Clarity TV | SonyLiv | Sports",${m.match_name}\n${url}`;
     })
     .filter(Boolean)
     .join("\n");
@@ -260,7 +260,7 @@ function convertFancode(json) {
     .map((m) => {
       const url = m.adfree_url || m.dai_url;
       if (!url) return null;
-      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="FanCode | Sports",${m.match_name}\n${url}`;
+      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="Clarity TV | FanCode | Sports",${m.match_name}\n${url}`;
     })
     .filter(Boolean)
     .join("\n");
@@ -280,7 +280,7 @@ function convertIccTv(json) {
       out.push(
         `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
         `#KODIPROP:inputstream.adaptive.license_key=${s.keys}`,
-        `#EXTINF:-1 group-title="T20 World Cup |Live Matches" tvg-logo="${s.match?.thumbnail || ""}",ICC-${s.title || "Live"}`,
+        `#EXTINF:-1 group-title="Clarity TV | T20 World Cup |Live Matches" tvg-logo="${s.match?.thumbnail || ""}",ICC-${s.title || "Live"}`,
         s.mpd
       );
     });
@@ -308,7 +308,7 @@ function convertSportsJson(json) {
     urlObj.searchParams.delete("User-Agent");
 
     out.push(
-      `#EXTINF:-1 tvg-id="${1100 + i}" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="T20 World Cup |Live Matches",${s.language}`,
+      `#EXTINF:-1 tvg-id="${1100 + i}" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup |Live Matches",${s.language}`,
       `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
       `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
       `#EXTHTTP:${JSON.stringify({
@@ -368,14 +368,14 @@ if (Array.isArray(SOURCES.TELUGU_JSON)) {
 
   if (allLocalChannels.length > 0) {
     out.push(
-      section("VT 📺 | Local Channel Telugu"),
+      section("Clarity TV 📺 | Local Channel Telugu"),
       convertLocalTelugu(allLocalChannels)
     );
   }
 }
 
 
-// ✅ LOCAL TAMIL CHANNELS
+✅ LOCAL TAMIL CHANNELS
 if (Array.isArray(SOURCES.LOCAL_JSON)) {
   let allLocalChannels = [];
 
@@ -388,7 +388,7 @@ if (Array.isArray(SOURCES.LOCAL_JSON)) {
 
   if (allLocalChannels.length > 0) {
     out.push(
-      section("VT 📺 | Local Channel Tamil"),
+      section("Clarity TV 📺 | Local Channel Tamil"),
       convertLocalTamil(allLocalChannels)
     );
   }
