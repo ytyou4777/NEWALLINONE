@@ -60,7 +60,6 @@ function convertHotstar(data) {
           const logo = ch.logo || ch.logo_url || ch.image || "";
           const name = ch.name || ch.title || ch.channel_name || "Unknown";
           
-          // Updated group-title with "Clarity TV |" prefix
           out.push(
             `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
             `#EXTVLCOPT:http-user-agent=${userAgent}`,
@@ -97,13 +96,10 @@ function convertHotstar(data) {
     if (!line) continue;
 
     if (line.startsWith('#EXTINF')) {
-      // Extract Logo and Name, rebuild with new group-title
       const logoMatch = line.match(/tvg-logo="([^"]*)"/);
       const logo = logoMatch ? logoMatch[1] : "";
-
       const lastComma = line.lastIndexOf(',');
       const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
-
       currentInf = `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
     } 
     else if (line.startsWith('http')) {
@@ -142,24 +138,32 @@ function convertHotstar(data) {
   return out.join("\n");
 }
 
-// ================= JIO =================
+// ================= JIO (FIXED) =================
 function convertJioJson(json) {
   if (!json) return "";
   const out = [];
 
   for (const id in json) {
     const ch = json[id];
-    const cookie = `hdnea=${ch.url.match(/__hdnea__=([^&]*)/)?.[1] || ""}`;
+    // Skip invalid entries
+    if (!ch || typeof ch !== 'object') continue;
+    
+    const url = ch.url;
+    if (!url || typeof url !== 'string') continue; // Skip if no valid URL
+
+    // Safely extract __hdnea__ from URL if present
+    const hdneaMatch = url.match(/__hdnea__=([^&]*)/);
+    const cookie = hdneaMatch ? `hdnea=${hdneaMatch[1]}` : "";
 
     out.push(
-      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${ch.channel_name}`,
+      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo || ''}" group-title="Clarity TV | JIO ⭕ | Live TV",${ch.channel_name || 'Unknown'}`,
       `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
-      `#KODIPROP:inputstream.adaptive.license_key=${ch.kid}:${ch.key}`,
+      `#KODIPROP:inputstream.adaptive.license_key=${ch.kid || ''}:${ch.key || ''}`,
       `#EXTHTTP:${JSON.stringify({
         Cookie: cookie,
-        "User-Agent": ch.user_agent,
+        "User-Agent": ch.user_agent || '',
       })}`,
-      ch.url
+      url
     );
   }
   return out.join("\n");
