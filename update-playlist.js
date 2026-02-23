@@ -144,7 +144,7 @@ function handleJioM3U(data) {
 
   const lines = data.split('\n');
   const out = [];
-  const defaultGroup = "Clarity TV | JIOTV+";
+  const defaultGroup = "| JIOTV+";
 
   for (let line of lines) {
     line = line.trimRight(); // preserve indentation but remove trailing spaces
@@ -191,7 +191,7 @@ function handleSonyM3U(data) {
     if (line.startsWith('#EXTINF:')) {
       if (line.includes('group-title=')) {
         line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title="Clarity TV | ${group}"`;
+          return `group-title="Clarity TV | SONY  ${group}"`;
         });
       } else {
         const commaIndex = line.indexOf(',');
