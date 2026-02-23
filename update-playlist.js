@@ -7,8 +7,7 @@ const OUTPUT_FILE = "stream.m3u";
 const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  EXTRA_M3U: "https://od.lk/s/MzZfODQzNTQ1Nzlf/raw?=m3u",
-  JIO_JSON: "https://raw.githubusercontent.com/vaathala00/jo/main/stream.jso",
+  JIO_JSON: "https://jtv.pfy.workers.dev/",                     // ✅ Updated JIO link
   SONYLIV_JSON: "https://raw.githubusercontent.com/drmlive/sliv-live-events/main/sonyliv.json",
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
@@ -20,8 +19,8 @@ const PLAYLIST_HEADER = `#EXTM3U
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_IN4.xml.gz"
 #EXTM3U x-tvg-url="https://mitthu786.github.io/tvepg/tataplay/epg.xml.gz"
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
-# ===== Vaathala Playlist =====
-# Join Telegram: @vaathala1
+# ===== Clarity TV Playlist =====
+# Join Telegram: @watch_clarity
 `;
 
 // ================= PLAYLIST FOOTER =================
@@ -32,7 +31,6 @@ const PLAYLIST_FOOTER = `
 `;
 
 // ================= SECTION =================
-
 function section(title) {
   return `\n# ---------------=== ${title} ===-------------------\n`;
 }
@@ -62,9 +60,9 @@ function convertHotstar(data) {
           const logo = ch.logo || ch.logo_url || ch.image || "";
           const name = ch.name || ch.title || ch.channel_name || "Unknown";
           
-          // Updated format to match desired output order
+          // Updated group-title with "Clarity TV |" prefix
           out.push(
-            `#EXTINF:-1 group-title="VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
+            `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
             `#EXTVLCOPT:http-user-agent=${userAgent}`,
             `#EXTHTTP:${JSON.stringify({ cookie: cookie, Origin: "https://www.hotstar.com", Referer: "https://www.hotstar.com/" })}`,
             urlObj.toString()
@@ -99,20 +97,14 @@ function convertHotstar(data) {
     if (!line) continue;
 
     if (line.startsWith('#EXTINF')) {
-      // --- CHANGE START ---
-      // Instead of regex replace, we extract data and rebuild the line to guarantee order.
-      
-      // 1. Extract Logo
+      // Extract Logo and Name, rebuild with new group-title
       const logoMatch = line.match(/tvg-logo="([^"]*)"/);
       const logo = logoMatch ? logoMatch[1] : "";
 
-      // 2. Extract Name (Everything after the last comma)
       const lastComma = line.lastIndexOf(',');
       const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
 
-      // 3. Rebuild line in desired order: group-title -> tvg-logo -> space -> comma -> name
-      currentInf = `#EXTINF:-1 group-title="VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
-      // --- CHANGE END ---
+      currentInf = `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`;
     } 
     else if (line.startsWith('http')) {
       const cookie = getRawParam(line, 'Cookie');
@@ -150,7 +142,6 @@ function convertHotstar(data) {
   return out.join("\n");
 }
 
-
 // ================= JIO =================
 function convertJioJson(json) {
   if (!json) return "";
@@ -161,7 +152,7 @@ function convertJioJson(json) {
     const cookie = `hdnea=${ch.url.match(/__hdnea__=([^&]*)/)?.[1] || ""}`;
 
     out.push(
-      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo}" group-title="JIO ⭕ | Live TV",${ch.channel_name}`,
+      `#EXTINF:-1 tvg-id="${id}" tvg-logo="${ch.tvg_logo}" group-title="Clarity TV | JIO ⭕ | Live TV",${ch.channel_name}`,
       `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
       `#KODIPROP:inputstream.adaptive.license_key=${ch.kid}:${ch.key}`,
       `#EXTHTTP:${JSON.stringify({
@@ -182,7 +173,7 @@ function convertSonyliv(json) {
     .map((m) => {
       const url = m.dai_url || m.pub_url;
       if (!url) return null;
-      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="SonyLiv | Sports",${m.match_name}\n${url}`;
+      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="Clarity TV | SonyLiv | Sports",${m.match_name}\n${url}`;
     })
     .filter(Boolean)
     .join("\n");
@@ -196,7 +187,7 @@ function convertFancode(json) {
     .map((m) => {
       const url = m.adfree_url || m.dai_url;
       if (!url) return null;
-      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="FanCode | Sports",${m.match_name}\n${url}`;
+      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="Clarity TV | FanCode | Sports",${m.match_name}\n${url}`;
     })
     .filter(Boolean)
     .join("\n");
@@ -216,7 +207,7 @@ function convertIccTv(json) {
       out.push(
         `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
         `#KODIPROP:inputstream.adaptive.license_key=${s.keys}`,
-        `#EXTINF:-1 group-title="T20 World Cup |Live Matches" tvg-logo="${s.match?.thumbnail || ""}",ICC-${s.title || "Live"}`,
+        `#EXTINF:-1 group-title="Clarity TV | T20 World Cup | Live Matches" tvg-logo="${s.match?.thumbnail || ""}",ICC-${s.title || "Live"}`,
         s.mpd
       );
     });
@@ -244,7 +235,7 @@ function convertSportsJson(json) {
     urlObj.searchParams.delete("User-Agent");
 
     out.push(
-      `#EXTINF:-1 tvg-id="${1100 + i}" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="T20 World Cup |Live Matches",${s.language}`,
+      `#EXTINF:-1 tvg-id="${1100 + i}" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",${s.language}`,
       `#KODIPROP:inputstream.adaptive.license_type=clearkey`,
       `#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`,
       `#EXTHTTP:${JSON.stringify({
@@ -257,7 +248,6 @@ function convertSportsJson(json) {
 
   return out.join("\n");
 }
-
 
 // ================= SAFE FETCH =================
 async function safeFetch(url, name, retries = 2) {
@@ -311,9 +301,6 @@ async function run() {
 
   const fan = await safeFetch(SOURCES.FANCODE_JSON, "FanCode");
   if (fan) out.push(section("FanCode | Sports"), convertFancode(fan));
-
-  const extra = await safeFetch(SOURCES.EXTRA_M3U, "Extra");
-  if (extra) out.push(section("Other Channels"), extra);
 
   out.push(PLAYLIST_FOOTER.trim());
 
