@@ -7459,39 +7459,6 @@ https://jiotvmblive.cdn.jio.com/bpk-tv/News_Time_Assam_BTS/output/index.mpd?__hd
 https://jiotvmblive.cdn.jio.com/bpk-tv/NB_News_BTS/output/index.mpd?__hdnea__=st=1771832162~exp=1771918562~acl=/*~hmac=c333dbfaf08865f71bb59a502b9787f59ca1cc94a3eede135d954afdf68343c2
 
 
-# ---------------=== T20 World Cup | Live Matches ===-------------------
-
-#EXTM3U
-
-#EXTINF:-1 tvg-id="1106" group-title="Hotstar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSXLd41E9MqbeJL6ShT7R1MoGOngO3QsR2nA&s",COMMING SOON Hotstar-Tamil  
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar(Android/15)
-#EXTVLCOPT:http-origin=https://www.hotstar.com
-#EXTVLCOPT:http-referrer=https://www.hotstar.com
-https://c2ag.short.gy/n/tamil.m3u8
-
-#EXTINF:-1 tvg-id="1106" group-title="Hotstar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSXLd41E9MqbeJL6ShT7R1MoGOngO3QsR2nA&s",COMMING SOON Hotstar-Hindi
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar(Android/15)
-#EXTVLCOPT:http-origin=https://www.hotstar.com
-#EXTVLCOPT:http-referrer=https://www.hotstar.com
-https://c2ag.short.gy/n/hin.m3u8
-
-#EXTINF:-1 tvg-id="1106" group-title="Hotstar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSXLd41E9MqbeJL6ShT7R1MoGOngO3QsR2nA&s",COMMING SOON Hotstar-Malayalam
-#EXTVLCOPT:http-origin=https://www.hotstar.com
-#EXTVLCOPT:http-referrer=https://www.hotstar.com
-https://c2ag.short.gy/n/mal.m3u8
-
-#EXTINF:-1 tvg-id="1106" group-title="Hotstar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSXLd41E9MqbeJL6ShT7R1MoGOngO3QsR2nA&s",COMMING SOON Hotstar-Telugu
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar(Android/15)
-#EXTVLCOPT:http-origin=https://www.hotstar.com
-#EXTVLCOPT:http-referrer=https://www.hotstar.com
-https://c2ag.short.gy/n/telugu.m3u8
-
-#EXTINF:-1 tvg-id="1106" group-title="Hotstar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSXLd41E9MqbeJL6ShT7R1MoGOngO3QsR2nA&s",COMMING SOON Hotstar-Kannada
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar(Android/15)
-#EXTVLCOPT:http-origin=https://www.hotstar.com
-#EXTVLCOPT:http-referrer=https://www.hotstar.com
-https://c2ag.short.gy/n/kan.m3u8
-
 # ---------------=== SonyLiv | Sports ===-------------------
 
 #EXTM3U
