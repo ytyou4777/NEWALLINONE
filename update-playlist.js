@@ -152,7 +152,7 @@ function handleJioM3U(data) {
       // Prepend our group prefix to existing group-title, or add it if missing
       if (line.includes('group-title=')) {
         line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title="Clarity TV | ${group}"`;
+          return `group-title=" ${group}"`;
         });
       } else {
         // No group-title, insert one after the duration
@@ -191,7 +191,7 @@ function handleSonyM3U(data) {
     if (line.startsWith('#EXTINF:')) {
       if (line.includes('group-title=')) {
         line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title="Clarity TV | SONY  ${group}"`;
+          return `group-title="Clarity TV | SONYLIV | ${group}"`;
         });
       } else {
         const commaIndex = line.indexOf(',');
@@ -341,14 +341,14 @@ async function run() {
   if (hotstar) out.push(section("Clarity TV | JIOHOTSTAR"), hotstar);
 
   const zee5 = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
-  if (zee5) out.push(section("ZEE5 | Live"), zee5);
+  if (zee5) out.push(section("Clarity TV | ZEE5 | Live"), zee5);
 
   // JIO M3U
   const jioData = await safeFetch(SOURCES.JIO_M3U, "JIO");
   if (jioData) {
     const jioContent = handleJioM3U(jioData);
     if (jioContent) {
-      out.push(section("JIO ⭕ | Live TV"), jioContent);
+      out.push(section("Clarity TV | JIOTV+"), jioContent);
     }
   }
 
@@ -356,7 +356,7 @@ async function run() {
   if (sportsData) {
     const sportsContent = handleSportsData(sportsData);
     if (sportsContent) {
-      out.push(section("T20 World Cup | Live Matches"), sportsContent);
+      out.push(section("Clarity TV | T20 World Cup | Live Matches"), sportsContent);
     }
   }
 
@@ -368,12 +368,12 @@ async function run() {
   if (sonyData) {
     const sonyContent = handleSonyM3U(sonyData);
     if (sonyContent) {
-      out.push(section("SonyLiv | Sports"), sonyContent);
+      out.push(section("Clarity TV | SonyLiv"), sonyContent);
     }
   }
 
   const fan = await safeFetch(SOURCES.FANCODE_JSON, "FanCode");
-  if (fan) out.push(section("FanCode | Sports"), convertFancode(fan));
+  if (fan) out.push(section("Clarity TV | FanCode | Sports"), convertFancode(fan));
 
   out.push(PLAYLIST_FOOTER.trim());
 
