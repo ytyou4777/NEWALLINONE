@@ -60,7 +60,7 @@ function convertHotstar(data) {
           const name = ch.name || ch.title || ch.channel_name || "Unknown";
           
           out.push(
-            `#EXTINF:-1 group-title="Clarity TV | VOOT | Jio Cinema" tvg-logo="${logo}" ,${name}`,
+            `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`,
             `#EXTVLCOPT:http-user-agent=${userAgent}`,
             `#EXTHTTP:${JSON.stringify({ cookie: cookie, Origin: "https://www.hotstar.com", Referer: "https://www.hotstar.com/" })}`,
             urlObj.toString()
@@ -134,7 +134,7 @@ function convertHotstar(data) {
   return out.join("\n");
 }
 
-// ================= JIO (FLEXIBLE & DEBUGGED) =================
+// ================= JIO (WITH DRM FIELDS SUPPORT) =================
 function convertJioJson(json) {
   if (!json) {
     console.warn("⚠️ JIO JSON is empty or null");
@@ -155,7 +155,6 @@ function convertJioJson(json) {
   if (Array.isArray(json)) {
     channels = json;
   } else if (typeof json === 'object') {
-    // Convert object with numeric keys to array
     channels = Object.values(json);
   }
 
@@ -170,10 +169,28 @@ function convertJioJson(json) {
     const logo = ch.logo || ch.tvg_logo || ch.image || ch.logo_url || "";
     const tvgId = ch.id || ch.tvg_id || index + 1;
 
-    // DRM info (may be missing)
-    const kid = ch.kid || ch.key_id || "";
-    const key = ch.key || ch.drm_key || "";
-    const hasDrm = kid && key;
+    // DRM info – check for drmScheme and drmLicense
+    const drmScheme = ch.drmScheme || ch.drm_scheme || "";
+    const drmLicense = ch.drmLicense || ch.drm_license || ch.license || "";
+
+    let kid = "", key = "";
+    if (drmLicense && typeof drmLicense === 'string') {
+      // Expected format: "kid:key" (KID first, then key)
+      const parts = drmLicense.split(':');
+      if (parts.length === 2) {
+        // Assume first part is KID, second is KEY (common for Kodi)
+        kid = parts[0].trim();
+        key = parts[1].trim();
+      } else {
+        console.warn(`⚠️ Unexpected drmLicense format: ${drmLicense}`);
+      }
+    } else {
+      // Fallback to individual kid/key fields
+      kid = ch.kid || ch.key_id || "";
+      key = ch.key || ch.drm_key || "";
+    }
+
+    const hasDrm = kid && key;  // Both required for valid DRM
 
     // User agent and cookie (may be missing)
     const userAgent = ch.user_agent || ch.ua || "";
@@ -185,7 +202,9 @@ function convertJioJson(json) {
 
     // Add KODIPROP lines only if DRM info exists
     if (hasDrm) {
-      out.push(`#KODIPROP:inputstream.adaptive.license_type=clearkey`);
+      // Use drmScheme if provided and valid, otherwise default to "clearkey"
+      const licenseType = (drmScheme && drmScheme.toLowerCase() === "clearkey") ? "clearkey" : "clearkey";
+      out.push(`#KODIPROP:inputstream.adaptive.license_type=${licenseType}`);
       out.push(`#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`);
     }
 
@@ -204,11 +223,12 @@ function convertJioJson(json) {
   if (out.length === 0) {
     console.warn("⚠️ No valid channels found in JIO source.");
   } else {
-    console.log(`✅ JIO: Processed ${out.length / (out.length > 0 ? (out[0].startsWith('#KODIPROP') ? 5 : (out.some(l => l.startsWith('#EXTHTTP')) ? 4 : 3)) : 1)} channels.`);
+    // Rough count of channels (each channel contributes at least EXTINF + URL)
+    const channelCount = out.filter(line => line.startsWith('#EXTINF')).length;
+    console.log(`✅ JIO: Processed ${channelCount} channels.`);
   }
   return out.join("\n");
 }
-
 // ================= SONYLIV =================
 function convertSonyliv(json) {
   if (!Array.isArray(json.matches)) return "";
