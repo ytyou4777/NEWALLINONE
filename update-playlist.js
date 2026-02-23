@@ -8,7 +8,7 @@ const SOURCES = {
   HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
   JIO_JSON: "https://jtv.pfy.workers.dev/",
-  SONYLIV_JSON: "https://raw.githubusercontent.com/drmlive/sliv-live-events/main/sonyliv.json",
+  SONYLIV_JSON: "https://raw.githubusercontent.com/cloudplay97/m3u/refs/heads/main/sony.m3u",
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
   SPORTS_JSON: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/index.m3u",
