@@ -5,10 +5,10 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
-  HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
+  HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?vot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  JIO_JSON: "https://jtv.pfy.workers.dev/",
-  SONYLIV_JSON: "https://raw.githubusercontent.com/vaathala00/sl/refs/heads/main/stream.m3u",
+  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",          // updated
+  SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
   SPORTS_JSON: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/index.m3u",
@@ -134,100 +134,81 @@ function convertHotstar(data) {
   return out.join("\n");
 }
 
-// ================= JIO (WITH DRM FIELDS SUPPORT) =================
-function convertJioJson(json) {
-  if (!json) {
-    console.warn("⚠️ JIO JSON is empty or null");
+// ================= JIO M3U HANDLER =================
+function handleJioM3U(data) {
+  if (!data) return "";
+  if (typeof data !== 'string') {
+    console.warn("⚠️ JIO data is not a string, skipping.");
     return "";
   }
 
+  const lines = data.split('\n');
   const out = [];
+  const defaultGroup = "Clarity TV | JIOTV+";
 
-  const extractHdnea = (url) => {
-    if (typeof url !== 'string') return "";
-    const match = url.match(/__hdnea__=([^&]*)/);
-    return match ? `hdnea=${match[1]}` : "";
-  };
-
-  let channels = [];
-  if (Array.isArray(json)) {
-    channels = json;
-  } else if (typeof json === 'object') {
-    channels = Object.values(json);
-  }
-
-  channels.forEach((ch, index) => {
-    if (!ch || typeof ch !== 'object') return;
-
-    const url = ch.url || ch.m3u8 || ch.stream_url || ch.link || ch.manifest;
-    if (!url || typeof url !== 'string') return;
-
-    const name = ch.name || ch.title || ch.channel_name || ch.channel || `Channel ${index + 1}`;
-    const logo = ch.logo || ch.tvg_logo || ch.image || ch.logo_url || "";
-    const tvgId = ch.id || ch.tvg_id || index + 1;
-
-    const drmScheme = ch.drmScheme || ch.drm_scheme || "";
-    const drmLicense = ch.drmLicense || ch.drm_license || ch.license || "";
-
-    let kid = "", key = "";
-    if (drmLicense && typeof drmLicense === 'string') {
-      const parts = drmLicense.split(':');
-      if (parts.length === 2) {
-        kid = parts[0].trim();
-        key = parts[1].trim();
+  for (let line of lines) {
+    line = line.trimRight(); // preserve indentation but remove trailing spaces
+    if (line.startsWith('#EXTINF:')) {
+      // Prepend our group prefix to existing group-title, or add it if missing
+      if (line.includes('group-title=')) {
+        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
+          return `group-title="Clarity TV | ${group}"`;
+        });
       } else {
-        console.warn(`⚠️ Unexpected drmLicense format: ${drmLicense}`);
+        // No group-title, insert one after the duration
+        const commaIndex = line.indexOf(',');
+        if (commaIndex !== -1) {
+          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
+        } else {
+          // Malformed line, just add at the end
+          line = line + ` group-title="${defaultGroup}"`;
+        }
       }
+      out.push(line);
     } else {
-      kid = ch.kid || ch.key_id || "";
-      key = ch.key || ch.drm_key || "";
+      out.push(line);
     }
-
-    const hasDrm = kid && key;
-
-    const userAgent = ch.user_agent || ch.ua || "";
-    const cookie = extractHdnea(url) || ch.cookie || "";
-
-    let extinf = `#EXTINF:-1 tvg-id="${tvgId}" tvg-logo="${logo}" group-title="Clarity TV | JIOTV+",${name}`;
-    out.push(extinf);
-
-    if (hasDrm) {
-      const licenseType = (drmScheme && drmScheme.toLowerCase() === "clearkey") ? "clearkey" : "clearkey";
-      out.push(`#KODIPROP:inputstream.adaptive.license_type=${licenseType}`);
-      out.push(`#KODIPROP:inputstream.adaptive.license_key=${kid}:${key}`);
-    }
-
-    if (cookie || userAgent) {
-      const headers = {};
-      if (cookie) headers.Cookie = cookie;
-      if (userAgent) headers["User-Agent"] = userAgent;
-      out.push(`#EXTHTTP:${JSON.stringify(headers)}`);
-    }
-
-    out.push(url);
-  });
-
-  if (out.length === 0) {
-    console.warn("⚠️ No valid channels found in JIO source.");
-  } else {
-    const channelCount = out.filter(line => line.startsWith('#EXTINF')).length;
-    console.log(`✅ JIO: Processed ${channelCount} channels.`);
   }
-  return out.join("\n");
+
+  console.log("✅ JIO M3U processed with group-title prefix.");
+  return out.join('\n');
 }
 
-// ================= SONYLIV =================
-function convertSonyliv(json) {
-  if (!Array.isArray(json.matches)) return "";
-  return json.matches
-    .filter((m) => m.isLive)
-    .map((m) => {
-      const url = m.dai_url || m.pub_url;
-      if (!url) return null;
-      return `#EXTINF:-1 tvg-logo="${m.src}" group-title="Clarity TV | SonyLiv | Sports",${m.match_name}\n${url}`;
-    })
-    .filter(Boolean)
-    .join("\n");
+// ================= SONY M3U HANDLER =================
+function handleSonyM3U(data) {
+  if (!data) return "";
+  if (typeof data !== 'string') {
+    console.warn("⚠️ Sony data is not a string, skipping.");
+    return "";
+  }
+
+  const lines = data.split('\n');
+  const out = [];
+  const defaultGroup = "Clarity TV | SonyLiv | Sports";
+
+  for (let line of lines) {
+    line = line.trimRight();
+    if (line.startsWith('#EXTINF:')) {
+      if (line.includes('group-title=')) {
+        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
+          return `group-title="Clarity TV | ${group}"`;
+        });
+      } else {
+        const commaIndex = line.indexOf(',');
+        if (commaIndex !== -1) {
+          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
+        } else {
+          line = line + ` group-title="${defaultGroup}"`;
+        }
+      }
+      out.push(line);
+    } else {
+      out.push(line);
+    }
+  }
+
+  console.log("✅ Sony M3U processed with group-title prefix.");
+  return out.join('\n');
 }
 
 // ================= FANCODE =================
@@ -267,28 +248,22 @@ function convertIccTv(json) {
   return out.join("\n");
 }
 
-// ================= SPORTS (NEW – HANDLES M3U OR JSON) =================
+// ================= SPORTS (HANDLES M3U OR JSON) =================
 function handleSportsData(data) {
   if (!data) return "";
 
-  // If it's a string and looks like an M3U, return it as-is (with minor cleanup)
   if (typeof data === 'string' && data.trim().startsWith('#EXTM3U')) {
     console.log("✅ Sports: Detected raw M3U, inserting directly.");
-    // Remove any leading #EXTM3U lines except the first one (just in case)
-    let cleaned = data.trim();
-    // Optionally, we could rewrite group titles here, but for simplicity, pass through.
-    return cleaned;
+    return data.trim();
   }
 
-  // Otherwise, try to parse as JSON (old format)
   try {
     if (typeof data === 'string') {
       data = JSON.parse(data);
     }
-    // Check if it has the old structure with 'streams'
     if (data && Array.isArray(data.streams)) {
       console.log("✅ Sports: Detected JSON format, converting.");
-      return convertSportsJson(data); // use the old converter
+      return convertSportsJson(data);
     }
   } catch (e) {
     console.warn("⚠️ Sports data is neither valid M3U nor expected JSON.");
@@ -297,7 +272,7 @@ function handleSportsData(data) {
   return "";
 }
 
-// Old JSON converter (kept for compatibility)
+// Old JSON converter for Sports (kept)
 function convertSportsJson(json) {
   if (!json || !Array.isArray(json.streams)) return "";
   const out = [];
@@ -368,8 +343,14 @@ async function run() {
   const zee5 = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
   if (zee5) out.push(section("ZEE5 | Live"), zee5);
 
-  const jio = await safeFetch(SOURCES.JIO_JSON, "JIO");
-  if (jio) out.push(section("JIO ⭕ | Live TV"), convertJioJson(jio));
+  // JIO M3U
+  const jioData = await safeFetch(SOURCES.JIO_M3U, "JIO");
+  if (jioData) {
+    const jioContent = handleJioM3U(jioData);
+    if (jioContent) {
+      out.push(section("JIO ⭕ | Live TV"), jioContent);
+    }
+  }
 
   const sportsData = await safeFetch(SOURCES.SPORTS_JSON, "Sports");
   if (sportsData) {
@@ -382,8 +363,14 @@ async function run() {
   const icc = await safeFetch(SOURCES.ICC_TV_JSON, "ICC TV");
   if (icc) out.push(section("ICC TV"), convertIccTv(icc));
 
-  const sony = await safeFetch(SOURCES.SONYLIV_JSON, "SonyLiv");
-  if (sony) out.push(section("SonyLiv | Sports"), convertSonyliv(sony));
+  // Sony M3U
+  const sonyData = await safeFetch(SOURCES.SONYLIV_M3U, "SonyLiv");
+  if (sonyData) {
+    const sonyContent = handleSonyM3U(sonyData);
+    if (sonyContent) {
+      out.push(section("SonyLiv | Sports"), sonyContent);
+    }
+  }
 
   const fan = await safeFetch(SOURCES.FANCODE_JSON, "FanCode");
   if (fan) out.push(section("FanCode | Sports"), convertFancode(fan));
