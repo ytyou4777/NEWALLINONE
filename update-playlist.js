@@ -60,7 +60,7 @@ function processM3U(data, defaultGroup) {
       if (line.includes('group-title=')) {
         // Prepend our brand to the existing group
         line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title="Clarity TV | ${group}"`;
+          return `group-title="${group}"`;
         });
       } else {
         // No group-title, add one after the duration
