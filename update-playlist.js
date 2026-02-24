@@ -5,7 +5,7 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
-  HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?vot.m3u",
+  HOTSTAR_M3U: "",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
   JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",          // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
@@ -36,103 +36,103 @@ function section(title) {
 }
 
 // ================= HOTSTAR =================
-function convertHotstar(data) {
-  if (typeof data !== 'string' || !data.trim().startsWith('#EXTM3U')) {
-    let json = data;
-    if (!Array.isArray(json) && typeof json === 'object') {
-      const possibleKeys = ['channels', 'data', 'results', 'streams', 'list'];
-      for (const key of possibleKeys) {
-        if (Array.isArray(json[key])) { json = json[key]; break; }
-      }
-    }
-    if (Array.isArray(json)) {
-      const out = [];
-      json.forEach((ch) => {
-        const rawUrl = ch.m3u8_url || ch.mpd_url || ch.url || ch.playback_url || ch.streamUrl;
-        if (!rawUrl) return;
-        try {
-          const urlObj = new URL(rawUrl);
-          const cookieMatch = rawUrl.match(/hdntl=[^&]*/);
-          const cookie = cookieMatch ? cookieMatch[0] : "";
-          const userAgent = decodeURIComponent(urlObj.searchParams.get("User-agent") || "") || "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
-          urlObj.searchParams.delete("User-agent"); urlObj.searchParams.delete("Origin"); urlObj.searchParams.delete("Referer");
-          const logo = ch.logo || ch.logo_url || ch.image || "";
-          const name = ch.name || ch.title || ch.channel_name || "Unknown";
+// function convertHotstar(data) {
+//   if (typeof data !== 'string' || !data.trim().startsWith('#EXTM3U')) {
+//     let json = data;
+//     if (!Array.isArray(json) && typeof json === 'object') {
+//       const possibleKeys = ['channels', 'data', 'results', 'streams', 'list'];
+//       for (const key of possibleKeys) {
+//         if (Array.isArray(json[key])) { json = json[key]; break; }
+//       }
+//     }
+//     if (Array.isArray(json)) {
+//       const out = [];
+//       json.forEach((ch) => {
+//         const rawUrl = ch.m3u8_url || ch.mpd_url || ch.url || ch.playback_url || ch.streamUrl;
+//         if (!rawUrl) return;
+//         try {
+//           const urlObj = new URL(rawUrl);
+//           const cookieMatch = rawUrl.match(/hdntl=[^&]*/);
+//           const cookie = cookieMatch ? cookieMatch[0] : "";
+//           const userAgent = decodeURIComponent(urlObj.searchParams.get("User-agent") || "") || "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
+//           urlObj.searchParams.delete("User-agent"); urlObj.searchParams.delete("Origin"); urlObj.searchParams.delete("Referer");
+//           const logo = ch.logo || ch.logo_url || ch.image || "";
+//           const name = ch.name || ch.title || ch.channel_name || "Unknown";
           
-          out.push(
-            `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`,
-            `#EXTVLCOPT:http-user-agent=${userAgent}`,
-            `#EXTHTTP:${JSON.stringify({ cookie: cookie, Origin: "https://www.hotstar.com", Referer: "https://www.hotstar.com/" })}`,
-            urlObj.toString()
-          );
-        } catch (e) {}
-      });
-      return out.join("\n");
-    }
-    return "";
-  }
+//           out.push(
+//             `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`,
+//             `#EXTVLCOPT:http-user-agent=${userAgent}`,
+//             `#EXTHTTP:${JSON.stringify({ cookie: cookie, Origin: "https://www.hotstar.com", Referer: "https://www.hotstar.com/" })}`,
+//             urlObj.toString()
+//           );
+//         } catch (e) {}
+//       });
+//       return out.join("\n");
+//     }
+//     return "";
+//   }
 
-  console.log("✅ Hotstar: Parsing and reformatting raw M3U...");
-  const lines = data.split('\n');
-  const out = [];
-  let currentInf = "";
+//   console.log("✅ Hotstar: Parsing and reformatting raw M3U...");
+//   const lines = data.split('\n');
+//   const out = [];
+//   let currentInf = "";
 
-  const getRawParam = (url, name) => {
-    const regex = new RegExp(`(?:[?&%7C])${name}=([^&]*)`);
-    const match = url.match(regex);
-    return match ? match[1] : "";
-  };
+//   const getRawParam = (url, name) => {
+//     const regex = new RegExp(`(?:[?&%7C])${name}=([^&]*)`);
+//     const match = url.match(regex);
+//     return match ? match[1] : "";
+//   };
 
-  const DEFAULT_UA = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
-  const DEFAULT_ORIGIN = "https://www.hotstar.com";
-  const DEFAULT_REFERER = "https://www.hotstar.com/";
+//   const DEFAULT_UA = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
+//   const DEFAULT_ORIGIN = "https://www.hotstar.com";
+//   const DEFAULT_REFERER = "https://www.hotstar.com/";
 
-  for (let line of lines) {
-    line = line.trim();
-    if (!line) continue;
+//   for (let line of lines) {
+//     line = line.trim();
+//     if (!line) continue;
 
-    if (line.startsWith('#EXTINF')) {
-      const logoMatch = line.match(/tvg-logo="([^"]*)"/);
-      const logo = logoMatch ? logoMatch[1] : "";
-      const lastComma = line.lastIndexOf(',');
-      const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
-      currentInf = `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`;
-    } 
-    else if (line.startsWith('http')) {
-      const cookie = getRawParam(line, 'Cookie');
-      let userAgent = getRawParam(line, 'User-agent');
-      let origin = getRawParam(line, 'Origin');
-      let referer = getRawParam(line, 'Referer');
+//     if (line.startsWith('#EXTINF')) {
+//       const logoMatch = line.match(/tvg-logo="([^"]*)"/);
+//       const logo = logoMatch ? logoMatch[1] : "";
+//       const lastComma = line.lastIndexOf(',');
+//       const name = (lastComma !== -1) ? line.substring(lastComma + 1).trim() : "Unknown";
+//       currentInf = `#EXTINF:-1 group-title="Clarity TV | JIOHOTSTAR" tvg-logo="${logo}" ,${name}`;
+//     } 
+//     else if (line.startsWith('http')) {
+//       const cookie = getRawParam(line, 'Cookie');
+//       let userAgent = getRawParam(line, 'User-agent');
+//       let origin = getRawParam(line, 'Origin');
+//       let referer = getRawParam(line, 'Referer');
 
-      if (!userAgent) userAgent = DEFAULT_UA;
-      if (!origin) origin = DEFAULT_ORIGIN;
-      if (!referer) referer = DEFAULT_REFERER;
+//       if (!userAgent) userAgent = DEFAULT_UA;
+//       if (!origin) origin = DEFAULT_ORIGIN;
+//       if (!referer) referer = DEFAULT_REFERER;
 
-      const cleanUrl = line.split('?')[0];
+//       const cleanUrl = line.split('?')[0];
 
-      if (currentInf) {
-        out.push(currentInf);
+//       if (currentInf) {
+//         out.push(currentInf);
         
-        const safeUA = userAgent.replace(/ /g, "%20");
-        out.push(`#EXTVLCOPT:http-user-agent=${safeUA}`);
+//         const safeUA = userAgent.replace(/ /g, "%20");
+//         out.push(`#EXTVLCOPT:http-user-agent=${safeUA}`);
 
-        const headers = {
-          cookie: cookie,
-          Origin: origin,
-          Referer: referer
-        };
-        out.push(`#EXTHTTP:${JSON.stringify(headers)}`);
+//         const headers = {
+//           cookie: cookie,
+//           Origin: origin,
+//           Referer: referer
+//         };
+//         out.push(`#EXTHTTP:${JSON.stringify(headers)}`);
 
-        out.push(cleanUrl);
+//         out.push(cleanUrl);
         
-        currentInf = "";
-      }
-    }
-  }
+//         currentInf = "";
+//       }
+//     }
+//   }
 
-  console.log(`✅ Processed ${out.length / 4} Hotstar channels.`);
-  return out.join("\n");
-}
+//   console.log(`✅ Processed ${out.length / 4} Hotstar channels.`);
+//   return out.join("\n");
+// }
 
 // ================= JIO M3U HANDLER =================
 function handleJioM3U(data) {
