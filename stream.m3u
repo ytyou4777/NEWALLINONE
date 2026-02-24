@@ -9793,12 +9793,12 @@ https://dishmt.slivcdn.com/hls/live/2011907-b/SonyBBCEarthHD/master.m3u8?hdnea=e
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/138437_5655_ALTW_AHS_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al Taawoun vs Al Hilal SFC
-https://in-mc-fdlive.fancode.com/mumbai/138437_english_hls_12b86f6c7f72758_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/EFL_Southampton-FC_vs_Queens-Park-rangers_FC-Web.jpg" group-title="Clarity TV | FanCode | Sports",Southampton F.C. vs Queens Park Rangers F.C.
 https://in-mc-fdlive.fancode.com/mumbai/140126_english_hls_c92a0008dd57131_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/BCI-Seguros-Chile-Open,-Clay,-ATP-250-old-.png" group-title="Clarity TV | FanCode | Sports",Court Jaime Fillol
 https://in-mc-fdlive.fancode.com/mumbai/140358_english_hls_a2c84695d834528_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/TGL_Mini-Match-Card-(1080x810).png" group-title="Clarity TV | FanCode | Sports",New York vs The Bay
+https://dai.google.com/linear/hls/event/ZDNossZgSEO2d_Q5a0fFwg/master.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
