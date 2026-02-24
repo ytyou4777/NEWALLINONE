@@ -5,9 +5,10 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
+  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",  
   HOTSTAR_M3U: "",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
-  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",          // updated
+          // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
   FANCODE_JSON: "https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
@@ -34,6 +35,48 @@ const PLAYLIST_FOOTER = `
 function section(title) {
   return `\n# ---------------=== ${title} ===-------------------\n`;
 }
+
+
+// ================= JIO M3U HANDLER =================
+function handleJioM3U(data) {
+  if (!data) return "";
+  if (typeof data !== 'string') {
+    console.warn("⚠️ JIO data is not a string, skipping.");
+    return "";
+  }
+
+  const lines = data.split('\n');
+  const out = [];
+  const defaultGroup = "| JIOTV+";
+
+  for (let line of lines) {
+    line = line.trimRight(); // preserve indentation but remove trailing spaces
+    if (line.startsWith('#EXTINF:')) {
+      // Prepend our group prefix to existing group-title, or add it if missing
+      if (line.includes('group-title=')) {
+        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
+          return `group-title=" ${group}"`;
+        });
+      } else {
+        // No group-title, insert one after the duration
+        const commaIndex = line.indexOf(',');
+        if (commaIndex !== -1) {
+          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
+        } else {
+          // Malformed line, just add at the end
+          line = line + ` group-title="${defaultGroup}"`;
+        }
+      }
+      out.push(line);
+    } else {
+      out.push(line);
+    }
+  }
+
+  console.log("✅ JIO M3U processed with group-title prefix.");
+  return out.join('\n');
+}
+
 
 // ================= HOTSTAR =================
 // function convertHotstar(data) {
@@ -134,45 +177,7 @@ function section(title) {
 //   return out.join("\n");
 // }
 
-// ================= JIO M3U HANDLER =================
-function handleJioM3U(data) {
-  if (!data) return "";
-  if (typeof data !== 'string') {
-    console.warn("⚠️ JIO data is not a string, skipping.");
-    return "";
-  }
 
-  const lines = data.split('\n');
-  const out = [];
-  const defaultGroup = "| JIOTV+";
-
-  for (let line of lines) {
-    line = line.trimRight(); // preserve indentation but remove trailing spaces
-    if (line.startsWith('#EXTINF:')) {
-      // Prepend our group prefix to existing group-title, or add it if missing
-      if (line.includes('group-title=')) {
-        line = line.replace(/group-title="([^"]*)"/, (match, group) => {
-          return `group-title=" ${group}"`;
-        });
-      } else {
-        // No group-title, insert one after the duration
-        const commaIndex = line.indexOf(',');
-        if (commaIndex !== -1) {
-          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
-        } else {
-          // Malformed line, just add at the end
-          line = line + ` group-title="${defaultGroup}"`;
-        }
-      }
-      out.push(line);
-    } else {
-      out.push(line);
-    }
-  }
-
-  console.log("✅ JIO M3U processed with group-title prefix.");
-  return out.join('\n');
-}
 
 // ================= SONY M3U HANDLER =================
 function handleSonyM3U(data) {
