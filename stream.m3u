@@ -378,6 +378,45 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 # Pushed & updated by Clarity TV
 # Telegram: https://t.me/watch_clarity
 
+
+# ---------------=== Clarity TV | T20I ===-------------------
+
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG(NS PLAYER)
+https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/wwrmho82pc/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=baafdb8ebcbbc0655332291da6f121da:60ac892e0ea0b2c46fc6837c97ed641a
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",WILLOW ENG(NS PLAYER)
+https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/rfh96ivsaj/out/v1/01c215d79e0b44c893a295dbecc8b336/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=151fcc077a8f254ac46580528b81f409:852dbcb36cc39cee1825da9cf5feafed
+
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Hindi HD
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1772104830~acl=%2f*~id=2498541065fd3bce86912308fb79ab14~data=hdntl~hmac=1496798a58e773ea17adef1f69e649353fd99c6f9aead3f77a627821446de56c","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0e3e64ae415771d8e460317ce97aa5e.m3u8
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Hindi
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1772104830~acl=%2f*~id=2498541065fd3bce86912308fb79ab14~data=hdntl~hmac=1496798a58e773ea17adef1f69e649353fd99c6f9aead3f77a627821446de56c","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://jcevents.hotstar.com/bpk-tv/2c7182c8e6a22cfa6ebc02bbc9ed6dd0/Fallback/2c7182c8e6a22cfa6ebc02bbc9ed6dd0.m3u8
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Telugu
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1772104830~acl=%2f*~id=2498541065fd3bce86912308fb79ab14~data=hdntl~hmac=1496798a58e773ea17adef1f69e649353fd99c6f9aead3f77a627821446de56c","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://jcevents.hotstar.com/bpk-tv/034d1fb94cae87294a06f4dc266084b9/Fallback/034d1fb94cae87294a06f4dc266084b9.m3u8
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Tamil
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1772104830~acl=%2f*~id=2498541065fd3bce86912308fb79ab14~data=hdntl~hmac=1496798a58e773ea17adef1f69e649353fd99c6f9aead3f77a627821446de56c","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://jcevents.hotstar.com/bpk-tv/4db6f833701e78ae4443cb268020f03b/Fallback/4db6f833701e78ae4443cb268020f03b.m3u8
+
+#EXTINF:-1 tvg-id="1106" tvg-language="English" group-title="  T20I World Cup" tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a",Star Sports 1 HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=965dc2ddb1d85138ad787999a7f30ca5:859695076e67fe961836b564db6d689c
+#EXTVLCOPT:http-user-agent=plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0
+#EXTHTTP:{"cookie":"__hdnea__=st=1771961763~exp=1772048163~acl=/*~hmac=e8baf801f999b6be3abda05245bd33005d2af2a360bbdb8fda4674bd8786b925"}
+https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd
+
+#EXTINF:-1 tvg-id="1108" tvg-language="Hindi" group-title="  T20I World Cup" tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a",Star Sports 1 Hindi HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=400131994b445d8c8817202248760fda:2d56cb6f07a75b9aff165d534ae2bfc4
+#EXTVLCOPT:http-user-agent=plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0
+#EXTHTTP:{"cookie":"__hdnea__=st=1771961763~exp=1772048163~acl=/*~hmac=e8baf801f999b6be3abda05245bd33005d2af2a360bbdb8fda4674bd8786b925"}
+https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd
+
 # ---------------=== Clarity TV | HOTSTAR ===-------------------
 
 #EXTM3U
@@ -9793,6 +9832,8 @@ https://dishmt.slivcdn.com/hls/live/2011907-b/SonyBBCEarthHD/master.m3u8?hdnea=e
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Sri-Lanka-Women-tour-of-West-Indies,-2026-old-card_1771585889068.jpg" group-title="Clarity TV | FanCode | Sports",Sri Lanka Women vs West Indies Women
+https://in-mc-fdlive.fancode.com/mumbai/140140_english_hls_62d5e081c554465_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",New Court 1
 https://in-mc-fdlive.fancode.com/mumbai/140347_english_hls_066a4acf083966_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo=" https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Centre Court
