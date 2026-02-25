@@ -382,9 +382,9 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 # ---------------=== Clarity TV | T20I ===-------------------
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG(NS PLAYER)
-https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/wwrmho82pc/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=baafdb8ebcbbc0655332291da6f121da:60ac892e0ea0b2c46fc6837c97ed641a
+#https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/wwrmho82pc/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=baafdb8ebcbbc0655332291da6f121da:60ac892e0ea0b2c46fc6837c97ed641a
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",WILLOW ENG(NS PLAYER)
-https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/rfh96ivsaj/out/v1/01c215d79e0b44c893a295dbecc8b336/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=151fcc077a8f254ac46580528b81f409:852dbcb36cc39cee1825da9cf5feafed
+#https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/rfh96ivsaj/out/v1/01c215d79e0b44c893a295dbecc8b336/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=151fcc077a8f254ac46580528b81f409:852dbcb36cc39cee1825da9cf5feafed
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Hindi HD
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
@@ -9836,6 +9836,10 @@ https://dishmt.slivcdn.com/hls/live/2011907-b/SonyBBCEarthHD/master.m3u8?hdnea=e
 https://in-mc-fdlive.fancode.com/mumbai/140140_english_hls_62d5e081c554465_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140686_5968_PECC_VDS_FC-Web.jpg" group-title="Clarity TV | FanCode | Sports",Paarl East Cricket Club vs Vredenburg/Saldanha CC
 https://in-mc-fdlive.fancode.com/mumbai/140686_english_hls_c5394d336f3763_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/138439_5655_ALN_ANF_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al-Najmah SC vs Al-Nassr FC
+https://in-mc-fdlive.fancode.com/mumbai/138439_english_hls_94a73cefca77173_1ta-di_h264/index.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140127_5489_STK_OU_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Stoke City F.C. vs Oxford United
+https://in-mc-fdlive.fancode.com/mumbai/140127_english_hls_d53fd6ce9b73074_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo=" https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Centre Court
 https://in-mc-fdlive.fancode.com/mumbai/140899_english_hls_421a52c4be66302_1ta-di_h264/index.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",World Feed
