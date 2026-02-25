@@ -9829,23 +9829,6 @@ https://dishmt.slivcdn.com/hls/live/2020593-b/SONYSIXHD/master.m3u8?hdnea=exp=17
 https://dishmt.slivcdn.com/hls/live/2020594-b/SONYSIXSD/master.m3u8?hdnea=exp=1771914784~acl=/*~id=77284567316916060422542621040611~hmac=d5553eaa26eae30a00d73439e6c27e8adc27edefa6d8ed87de8c585cd5c1a6cc|User-agent=com.sonyliv/6.22.4 (Android 15; en_GB; SM-S9360 Build/AP3A.240905.015.A2)&Referer=https://www.sonyliv.com/&Origin=https://www.sonyliv.com
 #EXTINF:-1 tvg-id="1000009252" tvg-name="BBC EARTH" group-title="Clarity TV | SONYLIV | Infotainment" tvg-language="English" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD.png",BBC EARTH
 https://dishmt.slivcdn.com/hls/live/2011907-b/SonyBBCEarthHD/master.m3u8?hdnea=exp=1771914784~acl=/*~id=77284567316916060422542621040611~hmac=d5553eaa26eae30a00d73439e6c27e8adc27edefa6d8ed87de8c585cd5c1a6cc|User-agent=com.sonyliv/6.22.4 (Android 15; en_GB; SM-S9360 Build/AP3A.240905.015.A2)&Referer=https://www.sonyliv.com/&Origin=https://www.sonyliv.com
-
-# ---------------=== Clarity TV | FanCode | Sports ===-------------------
-
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Sri-Lanka-Women-tour-of-West-Indies,-2026-old-card_1771585889068.jpg" group-title="Clarity TV | FanCode | Sports",Sri Lanka Women vs West Indies Women
-https://in-mc-fdlive.fancode.com/mumbai/140140_english_hls_62d5e081c554465_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140686_5968_PECC_VDS_FC-Web.jpg" group-title="Clarity TV | FanCode | Sports",Paarl East Cricket Club vs Vredenburg/Saldanha CC
-https://in-mc-fdlive.fancode.com/mumbai/140686_english_hls_c5394d336f3763_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/138439_5655_ALN_ANF_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al-Najmah SC vs Al-Nassr FC
-https://in-mc-fdlive.fancode.com/mumbai/138439_english_hls_94a73cefca77173_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140127_5489_STK_OU_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Stoke City F.C. vs Oxford United
-https://in-mc-fdlive.fancode.com/mumbai/140127_english_hls_d53fd6ce9b73074_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo=" https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Centre Court
-https://in-mc-fdlive.fancode.com/mumbai/140899_english_hls_421a52c4be66302_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Dubai-Duty-Free-Tennis-Championships_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",World Feed
-https://in-mc-fdlive.fancode.com/mumbai/140898_english_hls_202857d2b986118_1ta-di_h264/index.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/BCI-Seguros-Chile-Open,-Clay,-ATP-250-old-.png" group-title="Clarity TV | FanCode | Sports",Court Jaime Fillol
-https://in-mc-fdlive.fancode.com/mumbai/140359_english_hls_2abd95dd1c70831_1ta-di_h264/index.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
