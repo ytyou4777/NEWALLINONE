@@ -423,7 +423,7 @@ https://webiptv.site/12w.m3u8
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772161806~acl=*sshindi*~id=9cef8f0b09e535b5550842ca8db7024b~data=hdntl~hmac=9d7b4e721c8d92ac1023f6854a05a4879475ca05e40913a53c979201a6053e8d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772148256~acl=%2f*~id=00e8b4fef46e7d30a58eac6ed3a72014~data=hdntl~hmac=b5b07f90fc55dd621c664daa0fd0b38eed1274ed38188af5f5113764e3a5f4a4","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002466/sshindiwv/master.mpd
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Hindi HD
@@ -515,7 +515,7 @@ https://livetv-push.hotstar.com/dash/live/2002465/sshd2livetvwv/master.mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772161806~acl=*sshindi*~id=9cef8f0b09e535b5550842ca8db7024b~data=hdntl~hmac=9d7b4e721c8d92ac1023f6854a05a4879475ca05e40913a53c979201a6053e8d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772148256~acl=%2f*~id=00e8b4fef46e7d30a58eac6ed3a72014~data=hdntl~hmac=b5b07f90fc55dd621c664daa0fd0b38eed1274ed38188af5f5113764e3a5f4a4","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002466/sshindiwv/master.mpd
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7435/567435-h" group-title=" Clarity TV | VOOT | Jio Cinema",Star Sports Select HD1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
