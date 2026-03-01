@@ -424,20 +424,21 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772442070~acl=*sshd1livetv*~id=4bca30baa1be8082a3fe4ed56b962c10~data=hdntl~hmac=c2897efae899b2a64973dddebe9d61dd0f0710ecb5c9a3f8edc57a72657fa3f8","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002464/sshd1livetvwv/master.mpd
+
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7432/567432-h" group-title=" T20I World Cup",Star Sports HD2
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772442131~acl=*sshd2livetv*~id=302396cbec6a54e8b5ced9fc91bbb274~data=hdntl~hmac=9b34f5be9011859e165c78a2d2fb24396ddee5bc0d83b00e32bf58146d847a22","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002465/sshd2livetvwv/master.mpd
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7433/567433-h" group-title=" T20I World Cup",Star Sports Hindi HD1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772441928~acl=*sshindi*~id=9a80763b762153c5f59766490bd407f6~data=hdntl~hmac=4135887a6e51e31a10eda1d155707c077f7681ff6ff5be6d0eccaabc3d265413","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002466/sshindiwv/master.mpd
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",Star Sports 2 Hindi HD
@@ -513,24 +514,33 @@ https://livetv.hotstar.com/mp1/gec-india-hotstartv/3e222014b2524730ad86d0a8457ca
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 #EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv.hotstar.com/mp2/gec-india/60b51adb7eae4ae492e6ba6c156a1efe/index_7.m3u8
+
+
+
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7430/567430-h" group-title=" Clarity TV | VOOT | Jio Cinema",Star Sports HD1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772442070~acl=*sshd1livetv*~id=4bca30baa1be8082a3fe4ed56b962c10~data=hdntl~hmac=c2897efae899b2a64973dddebe9d61dd0f0710ecb5c9a3f8edc57a72657fa3f8","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002464/sshd1livetvwv/master.mpd
+
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7432/567432-h" group-title=" Clarity TV | VOOT | Jio Cinema",Star Sports HD2
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772442131~acl=*sshd2livetv*~id=302396cbec6a54e8b5ced9fc91bbb274~data=hdntl~hmac=9b34f5be9011859e165c78a2d2fb24396ddee5bc0d83b00e32bf58146d847a22","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002465/sshd2livetvwv/master.mpd
+
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7433/567433-h" group-title=" Clarity TV | VOOT | Jio Cinema",Star Sports Hindi HD1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1772438048~acl=%2f*~id=889f67d5586d7aca17aaeb56a6233eb9~data=hdntl~hmac=6d118e35c124e4b3109de824369637e5fe115792aa12255c080b5859e9c3e29d","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1772441928~acl=*sshindi*~id=9a80763b762153c5f59766490bd407f6~data=hdntl~hmac=4135887a6e51e31a10eda1d155707c077f7681ff6ff5be6d0eccaabc3d265413","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002466/sshindiwv/master.mpd
+
+
+
+
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7435/567435-h" group-title=" Clarity TV | VOOT | Jio Cinema",Star Sports Select HD1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
