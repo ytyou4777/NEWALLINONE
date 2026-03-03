@@ -220,86 +220,36 @@ function handleSonyM3U(data) {
 function convertFancode(json) {
   if (!json) return "";
 
-  // detect structure safely
-  let matches = [];
-
-  if (Array.isArray(json.matches)) {
-    matches = json.matches;
-  } else if (Array.isArray(json.data)) {
-    matches = json.data;
-  } else if (Array.isArray(json.streams)) {
-    matches = json.streams;
-  } else {
-    console.warn("⚠️ Unknown FanCode JSON structure");
-    return "";
-  }
+  let matches = json.matches || json.data || json.streams || [];
 
   const out = [];
 
   matches.forEach((m) => {
-    const isLive =
-      m.status === "LIVE" ||
-      m.live === true ||
-      m.match_status === "LIVE";
-
-    if (!isLive) return;
-
     const url =
       m.adfree_url ||
       m.dai_url ||
-      m.playback_url ||
-      m.stream_url ||
-      m.url;
+      m.playback_url;
 
-    if (!url) return;
+    // ❌ Skip DRM (mpd)
+    if (!url || url.includes(".mpd")) return;
 
-    const name =
-      m.match_name ||
-      m.title ||
-      m.name ||
-      "FanCode Live";
+    // ✅ Only allow m3u8
+    if (!url.includes(".m3u8")) return;
 
-    const logo =
-      m.src ||
-      m.logo ||
-      m.image ||
-      "";
+    const name = m.match_name || m.title || "FanCode Live";
+    const logo = m.src || "";
 
-    try {
-      const urlObj = new URL(url);
-
-      // extract headers
-      const userAgent =
-        urlObj.searchParams.get("User-Agent") ||
-        "Mozilla/5.0 (Linux; Android 10)";
-
-      const ref =
-        urlObj.searchParams.get("Referer") ||
-        "https://www.fancode.com/";
-
-      // clean URL
-      urlObj.searchParams.delete("User-Agent");
-      urlObj.searchParams.delete("Referer");
-
-      out.push(
-        `#EXTINF:-1 tvg-logo="${logo}" group-title="Clarity TV | FanCode | Sports",${name}`,
-        `#EXTVLCOPT:http-user-agent=${userAgent}`,
-        `#EXTHTTP:${JSON.stringify({
-          Referer: ref,
-          Origin: "https://www.fancode.com"
-        })}`,
-        urlObj.toString()
-      );
-
-    } catch (e) {
-      console.warn("⚠️ Invalid FanCode URL skipped");
-    }
+    out.push(
+      `#EXTINF:-1 tvg-logo="${logo}" group-title="Clarity TV | FanCode | Sports",${name}`,
+      `#EXTVLCOPT:http-user-agent=Mozilla/5.0`,
+      `#EXTVLCOPT:http-referrer=https://www.fancode.com/`,
+      url
+    );
   });
 
-  console.log(`✅ FanCode processed: ${out.length / 4} streams`);
+  console.log(`✅ FanCode working streams: ${out.length / 3}`);
   return out.join("\n");
 }
-
 // ================= ICC TV =================
 function convertIccTv(json) {
   if (!Array.isArray(json.tournaments)) return "";
