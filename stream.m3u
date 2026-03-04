@@ -417,8 +417,11 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG(NS PLAYER)
 #https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/wwrmho82pc/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=baafdb8ebcbbc0655332291da6f121da:60ac892e0ea0b2c46fc6837c97ed641a
-#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",WILLOW ENG(NS PLAYER)
-#https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/rfh96ivsaj/out/v1/01c215d79e0b44c893a295dbecc8b336/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=151fcc077a8f254ac46580528b81f409:852dbcb36cc39cee1825da9cf5feafed
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",WILLOW ENG
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ac38fc1a8c759f4d1a43163432e964e9:9a55742c7164153e9440811712faa806
+https://ta.bia-cf.live.pv-cdn.net/bom-nitro/live/clients/dash/enc/glqjh8kskc/out/v1/45bfbb3a527944c295223376e0bb6dc0/cenc.mpd
+
 
 #EXTINF:-1 tvg-id="Star Sports 1 HD" tvg-logo="https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/16-by-xfireflix.png" group-title=" T20I World Cup",Star Sports 1 HD
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
