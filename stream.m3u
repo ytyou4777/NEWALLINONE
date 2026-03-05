@@ -387,7 +387,6 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 #https://c2ag.short.gy/n/english.m3u8
 
 #EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Hindi
-#EXTHTTP:{"Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/","User-Agent":"Hotstar;in.startv.hotstar.links_macha_official(Android/15)","Telegram":"@watch_clarity","Creator":"@watch_clarity"}
 https://sfsfs.valverdeae7.workers.dev/live.m3u8
 
 #EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Tamil
@@ -415,6 +414,10 @@ https://sfsfs.valverdeae7.workers.dev/live.m3u8
 #https://c2ag.short.gy/n/bih.m3u8
 
 
+#EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME HIN
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f265a29126992a01ed0863899c3a5a61:5889549c5a6b9a53181223a4fd1cce99
+https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/axkmfurjky/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=03018e1facaf7f344fa3d7439c6fc5b2:48a92e8fc0c897a7b23044f4b86e544b
