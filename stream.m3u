@@ -387,7 +387,7 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 #https://c2ag.short.gy/n/english.m3u8
 
 #EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Hindi
-https://sfsfs.valverdeae7.workers.dev/live.m3u8
+#https://sfsfs.valverdeae7.workers.dev/live.m3u8
 
 #EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Tamil
 #EXTHTTP:{"Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/","User-Agent":"Hotstar;in.startv.hotstar.links_macha_official(Android/15)","Telegram":"@watch_clarity","Creator":"@watch_clarity"}
@@ -417,16 +417,16 @@ https://sfsfs.valverdeae7.workers.dev/live.m3u8
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME HIN
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=f265a29126992a01ed0863899c3a5a61:5889549c5a6b9a53181223a4fd1cce99
-https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/axkmfurjky/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
+#https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/axkmfurjky/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=03018e1facaf7f344fa3d7439c6fc5b2:48a92e8fc0c897a7b23044f4b86e544b
-https://otte.cache.aiv-cdn.net/syd-nitro/live/clients/dash/enc/kmdxq2mru1/out/v1/d346b8e088254045bf5ecde7cf5d335a/cenc.mpd
+#https://otte.cache.aiv-cdn.net/syd-nitro/live/clients/dash/enc/kmdxq2mru1/out/v1/d346b8e088254045bf5ecde7cf5d335a/cenc.mpd
 #https://live-pv-ta.amazon.fastly-edge.com/lhr-nitro/live/clients/dash/enc/wwrmho82pc/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd?%7CdrmScheme=clearkey&drmLicense=baafdb8ebcbbc0655332291da6f121da:60ac892e0ea0b2c46fc6837c97ed641a
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",WILLOW ENG
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=106c1cd8b773f4486335cd98f4d3b8d8:167828189119ff2eda785eb4c0c7f35c
-https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/wfdj3lglfg/out/v1/b2db8919b7f44ee38826dd1fa0c846d3/cenc.mpd
+#https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/wfdj3lglfg/out/v1/b2db8919b7f44ee38826dd1fa0c846d3/cenc.mpd
 
 
 
@@ -435,21 +435,21 @@ https://a96aivottlinear-a.akamaihd.net/OTTB/iad-nitro/enc/wfdj3lglfg/out/v1/b2db
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 #EXTHTTP:{"Cookie":"hdntl=exp=1772797974~acl=*sshd1livetv*~id=4cdc673b9128106b5b21521587c88087~data=hdntl~hmac=491df2b5ea7f58c9c6674988bb95842f15296ea0426b1f76f88adeae0aaa6f75","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
-https://livetv-push.hotstar.com/dash/live/2002464-b/sshd1livetvwv/master.mpd
+#https://livetv-push.hotstar.com/dash/live/2002464-b/sshd1livetvwv/master.mpd
 
 #EXTINF:-1 tvg-id="Star Sports Hindi 1 HD" tvg-logo="https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/1-by-xfireflix.png" group-title=" T20I World Cup",Star Sports Hindi 1 HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 #EXTHTTP:{"Cookie":"hdntl=exp=1772798041~acl=*sshindi*~id=b54366b48f3e144b2d66fac269a117dc~data=hdntl~hmac=cb0e32bade32f2baef3f7ffe16b56a0d23b5073e5219cdc2be08de1cdfe23e15","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
-https://livetv-push.hotstar.com/dash/live/2002466-b/sshindiwv/master.mpd
+#https://livetv-push.hotstar.com/dash/live/2002466-b/sshindiwv/master.mpd
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7432/567432-h" group-title=" T20I World Cup",Star Sports HD2
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 #EXTHTTP:{"Cookie":"hdntl=exp=1772798111~acl=*sshd2livetv*~id=a300fcca2af4dc56550b3d5cf494f40c~data=hdntl~hmac=bee158a67253acadd104fa4a8b57b76dceb7865e62ff8b8f38054c537fa12cd5","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
-https://livetv-push.hotstar.com/dash/live/2002465/sshd2livetvwv/master.mpd
+#https://livetv-push.hotstar.com/dash/live/2002465/sshd2livetvwv/master.mpd
 
 
 
@@ -9882,43 +9882,43 @@ https://jiotvbpkmob.cdn.jio.com/bpk-tv/Asia_Cup_Telugu_MOB/WDVLive/index.mpd
 #EXTINF:-1 tvg-id="1100" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 1 HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=965dc2ddb1d85138ad787999a7f30ca5:859695076e67fe961836b564db6d689c
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1101" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 1 Hindi HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=400131994b445d8c8817202248760fda:2d56cb6f07a75b9aff165d534ae2bfc4
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1102" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 2 Kannada
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=7af2add2968a56309519ac2680c18f25:f992a14e0def17ccdfe16f58c4ce56c5
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_2_Kannada_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_2_Kannada_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1103" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 1 Kannada
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9a6d058fa40b5460a946178900eb44cb:791d7444110cec32d731ca0c33ac6c15
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Kannada_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Kannada_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1104" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 2 Telugu
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6576a2664bc1563db2abd4fc192152b2:452e28454297a4193dbdf8f5cebc70b0
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/StarSports2Telugu_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/StarSports2Telugu_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1105" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 2 Tamil
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=3c1b335c4bb858a7a6ac5a883d898a09:6eeff4302a7d19befd43c6b7b5fac268
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/StarSports2Tamil_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/StarSports2Tamil_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1106" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 1 Tamil HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=2272c0bc6b2e5cb090b1f55996e0026c:943923934de1d5536ab01c67fca8b337
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 #EXTINF:-1 tvg-id="1107" tvg-logo="https://img.u0k.workers.dev/joinvaathala1.webp" group-title="Clarity TV | T20 World Cup | Live Matches",Star Sports 1 Telugu HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=49e84b9edfd85379b90c81b7d2d3d2bf:19c82d3ff094fa06af95820a1572ecb5
-#EXTHTTP:{"Cookie":"__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58|Cookie=__hdnea__=st=1772655905~exp=1772742305~acl=/*~hmac=68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_HD_BTS/output/index.mpd?__hdnea__=st%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58%7CCookie%3D__hdnea__%3Dst%3D1772655905%7Eexp%3D1772742305%7Eacl%3D%2F*%7Ehmac%3D68dd022bdca072e5aebbc33c2a5eb4540b9ec518d410712e11e7c7d9f158ce58&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
+#EXTHTTP:{"Cookie":"__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b|Cookie=__hdnea__=st=1772742306~exp=1772828706~acl=/*~hmac=ffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b","User-Agent":"plaYtv/7.1.3 (Linux;Android 13) ygx/824.1 ExoPlayerLib/824.0"}
+https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_HD_BTS/output/index.mpd?__hdnea__=st%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b%7CCookie%3D__hdnea__%3Dst%3D1772742306%7Eexp%3D1772828706%7Eacl%3D%2F*%7Ehmac%3Dffc9e0ba5a35d894e955180b59621ed9da1268909beb960275bbab2c488b475b&Origin=https%3A%2F%2Fjiotv.com%2F&Referer=https%3A%2F%2Fjiotv.com%2F&drmScheme=clearkey
 
 # ---------------=== Clarity TV | SonyLiv ===-------------------
 
