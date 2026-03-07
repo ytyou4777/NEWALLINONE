@@ -10093,6 +10093,10 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/NZ-vs-ZIM_ODi_fc_web_1772618590773.jpg" group-title="Clarity TV | FanCode | Sports",Zimbabwe Women Vs New Zealand Women
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140597_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131093_5427_ATH_BAR_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Athletic Club Vs Fc Barcelona
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10153,6 +10157,10 @@ https://fanco.vodep39240327.workers.dev/141242_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141241_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/F3_Australia_web.jpg" group-title="Clarity TV | FanCode | Sports",Feature Race
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/139707_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
