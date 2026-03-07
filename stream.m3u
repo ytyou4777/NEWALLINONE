@@ -10093,10 +10093,6 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131094_5427_ATL_RS_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Atletico De Madrid Vs Real Sociedad
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/131094_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140718_5655_ANF_NEOM_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al Nassr Fc Vs Neom Sc
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10121,6 +10117,10 @@ https://fanco.vodep39240327.workers.dev/131093_bengali.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141043_english.m3u8
+#EXTINF:-1 tvg-logo="https://images.fancode.com/aig/match/v1772160982905/140826_CASACARDS_APP.png" group-title="Clarity TV | FanCode | Sports",Málaga Vs Real Valladolid
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140826_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(7).png" group-title="Clarity TV | FanCode | Sports",Main Feed Day 3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10165,6 +10165,10 @@ https://fanco.vodep39240327.workers.dev/141242_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141241_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131094_5427_ATL_RS_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Atletico De Madrid Vs Real Sociedad
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/131094_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
