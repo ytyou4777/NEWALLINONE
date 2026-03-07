@@ -10,7 +10,8 @@ const SOURCES = {
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
           // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
-  FANCODE_JSON: "https://allinonereborn.online/fctest/json/fancode_latest.json",
+  // FANCODE_JSON: "https://allinonereborn.store/fctest/json/fancode_latest.json",
+  FANCODE_JSON: "https://fanco.vodep39240327.workers.dev/",
   ICC_TV_JSON: "https://icc.vodep39240327.workers.dev/icctv.jso",
   SPORTS_JSON: "https://sports.vodep39240327.workers.dev/sports.json",
 };
