@@ -416,8 +416,8 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME HIN
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=f265a29126992a01ed0863899c3a5a61:5889549c5a6b9a53181223a4fd1cce99
-#https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/axkmfurjky/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
+#KODIPROP:inputstream.adaptive.license_key=9909e33838e1152cc512c4636f513f8f:02f67060c94bcc3307280f505ad508ab
+https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nn1qrdjaha/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8704/1764056908704-a" group-title="  T20I World Cup",PRIME ENG
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=03018e1facaf7f344fa3d7439c6fc5b2:48a92e8fc0c897a7b23044f4b86e544b
@@ -10093,10 +10093,14 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Tillo-Cup-2026-old-card-.jpg" group-title="Clarity TV | FanCode | Sports",Jp Sports Noida Vs A&s Kolkata
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810).png" group-title="Clarity TV | FanCode | Sports",Afc Wimbledon Vs Northampton Town Fc
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/141258_english.m3u8
+https://fanco.vodep39240327.workers.dev/140558_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(7).png" group-title="Clarity TV | FanCode | Sports",Main Feed Day 4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/141000_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
