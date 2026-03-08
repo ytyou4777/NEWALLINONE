@@ -382,12 +382,15 @@ https://aasthaott.akamaized.net/110923/smil:aasthausa.smil/playlist.m3u8?hdntl=e
 # ---------------=== Clarity TV | T20I ===-------------------
 
 
-#EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-English
-#EXTHTTP:{"Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/","User-Agent":"Hotstar;in.startv.hotstar.links_macha_official(Android/15)","Telegram":"@watch_clarity","Creator":"@watch_clarity"}
-#https://c2ag.short.gy/n/english.m3u8
+#EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-English 4K
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.11.24.0.4237 (Android/13)
+#EXTHTTP:{"Cookie":"hdntl=exp=1773059401~acl=/*~data=hdntl~hmac=9d0990cfc91f24a77ae62ca534e62b5f805ee177d8932f8d187fe50abf6c6475","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://live11p.akt.hotstar-cdn.net/cmaf/live/2108387/inallow-icct20wc-2026/eng/1540062397/15mindvrm013a4e2de894204cfc98f4f64e2f73affc08march2026/master_a.m3u8
 
-#EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Hindi
-#https://sfsfs.valverdeae7.workers.dev/live.m3u8
+#EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Hindi 4K
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.11.24.0.4237 (Android/13)
+#EXTHTTP:{"Cookie":"hdntl=exp=1773059401~acl=/*~data=hdntl~hmac=9d0990cfc91f24a77ae62ca534e62b5f805ee177d8932f8d187fe50abf6c6475","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://live12p.akt.hotstar-cdn.net/cmaf/live/2108404/inallow-icct20wc-2026/hin/1540062397/15mindvrm013a4e2de894204cfc98f4f64e2f73affc08march2026/master_a.m3u8
 
 #EXTINF:-1 tvg-id="1106" group-title=" T20I World Cup" tvg-logo="https://pbs.twimg.com/media/G7vaGYkaMAIIECs.jpg",Hot✨-Tamil
 #EXTHTTP:{"Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/","User-Agent":"Hotstar;in.startv.hotstar.links_macha_official(Android/15)","Telegram":"@watch_clarity","Creator":"@watch_clarity"}
@@ -10093,10 +10096,18 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131099_5427_VIL_ELC_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Villarreal Cf Vs Elche Cf
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/131099_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810).png" group-title="Clarity TV | FanCode | Sports",Afc Wimbledon Vs Northampton Town Fc
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/140558_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Scottish_Cup_2026_FC-Web.jpg" group-title="Clarity TV | FanCode | Sports",Rangers Vs Celtic
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/141045_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(7).png" group-title="Clarity TV | FanCode | Sports",Main Feed Day 4
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
