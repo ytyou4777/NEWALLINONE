@@ -5,7 +5,7 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
-  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/JIO-STAR/refs/heads/main/jiostarr.m3u",  
+  JIO_M3U: "https://jio-star-dun.vercel.app/jiostar.m3u",  
   HOTSTAR_M3U: "",
   ZEE5_M3U: "",
           // updated
