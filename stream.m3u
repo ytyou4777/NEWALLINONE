@@ -9730,14 +9730,6 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140708_5971_CAY_MEX_fc-Web.jpg" group-title="Clarity TV | FanCode | Sports",Mexico Vs Cayman Islands
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140708_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131096_5427_ESL_RO_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Rcd Espanyol Vs Real Oviedo
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/131096_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/BNP_Paribas-Open_web.jpg" group-title="Clarity TV | FanCode | Sports",C Court Feed
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
