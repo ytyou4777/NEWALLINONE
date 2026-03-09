@@ -5,9 +5,9 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
-  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",  
-  HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
-  ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
+  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/JIO-STAR/refs/heads/main/jiostarr.m3u",  
+  HOTSTAR_M3U: "",
+  ZEE5_M3U: "",
           // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
   // FANCODE_JSON: "https://allinonereborn.store/fctest/json/fancode_latest.json",
