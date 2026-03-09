@@ -19,7 +19,7 @@ export default function handler(req, res) {
 
   // Playlist map
   const playlists = {
-    ALLINONE:'https://raw.githubusercontent.com/ytyou4777/NEWALLINONE/refs/heads/main/stream.m3u',
+    ALLINONE:'/stream.m3u',
   };
 
   const id = req.query.id;
