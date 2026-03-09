@@ -5,8 +5,8 @@ const OUTPUT_FILE = "stream.m3u";
 
 // ================= SOURCES =================
 const SOURCES = {
-  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/JIO-STAR/refs/heads/main/jiostar.m3u",  
-  HOTSTAR_M3U: "",
+  JIO_M3U: "https://raw.githubusercontent.com/ytyou4777/SPORTS/refs/heads/main/JIO.m3u",  
+  HOTSTAR_M3U: "https://voot.vodep39240327.workers.dev?voot.m3u",
   ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
           // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
