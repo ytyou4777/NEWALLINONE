@@ -9027,6 +9027,14 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141260_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140808_5979_NK-W_CHN-W_fc-Web_1772191702175.jpg" group-title="Clarity TV | FanCode | Sports",Dpr Korea Women Vs China Pr Women
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140808_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140809_5979_BDW_UB-W_fc-Web_1772191702984.jpg" group-title="Clarity TV | FanCode | Sports",Bangladesh Women Vs Uzbekistan Women
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140809_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
