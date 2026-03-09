@@ -2618,7 +2618,7 @@ https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Movies_Select_HD_BTS/output/index.mp
 #KODIPROP:inputstream.adaptive.license_key=6ac6943751e558b181da32727f03dff7:f36e5cd48252bcd0fcda2bfe21f5b365
 #EXTVLCOPT:http-user-agent=@watch_clarity
 #EXTHTTP:{"cookie":"__hdnea__=st=1773041749~exp=1773128149~acl=/*~hmac=0353d96a89f88e11199d5203e2b0fae911f00470d25bec747ac588ae191e5bc0"}
-https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Movies_HD_BTS/output/index.mpd?__hdnea__=st=1773041749~exp=1773128149~acl=/*~hmac=0353d96a89f88e11199d5203e2b0fae911f00470d25bec747ac588ae191e5bc0
+https://jiotvpllive.cdn.jio.com/bpk-tv/StarMoviesHD_BTS/output/index.mpd?__hdnea__=st=1772937957~exp=1773024357~acl=/*~hmac=d43c7771d4054af99c2353d4119214b32c022e716dd521e998090e86f694f134
 
 #EXTINF:-1 tvg-id="1307" group-title=" JIOTV+ | Movies" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Movies.png",Star Movies
 #KODIPROP:inputstream.adaptive.license_type=clearkey
