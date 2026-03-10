@@ -9754,6 +9754,10 @@ https://fanco.vodep39240327.workers.dev/141023_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141022_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/NZ-vs-ZIM_ODi_fc_web_1772618590773.jpg" group-title="Clarity TV | FanCode | Sports",New Zealand Women Vs Zimbabwe Women
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140598_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
