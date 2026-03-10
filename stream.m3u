@@ -71,7 +71,7 @@ https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nn1qrdjaha/out/v1
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1773169263~acl=*sshindi*~id=1094d9c3be9f2951ff7348fb63e86d22~data=hdntl~hmac=18e959a153af18b7569b9b33ee412241d9743dc33330ea5f494878ead307ad8c","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1773200415~acl=%2f*~id=5e644905a6ff13d2faed879ca4ce7135~data=hdntl~hmac=a9c8ad94b500b5c7113c76242b5b8c41a1c975e5827ac7acb29f5be304c40c8e","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://livetv-push.hotstar.com/dash/live/2002464-b/sshd1livetvwv/master.mpd
 
 #EXTINF:-1 tvg-id="Star Sports Hindi 1 HD" tvg-logo="https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/1-by-xfireflix.png" group-title="  T20I World Cup",Star Sports Hindi 1 HD
@@ -9730,26 +9730,14 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Bahrain-tour-of-Malaysia-old-card.jpg" group-title="Clarity TV | FanCode | Sports",Malaysia Vs Bahrain
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/141301_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Tillo-Cup-2026-old-card-.jpg" group-title="Clarity TV | FanCode | Sports",Cag Delhi Vs Spj Cargo Delhi
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/141262_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(8).png" group-title="Clarity TV | FanCode | Sports",Chennai Warlords Vs Tamil Nadu Titans
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141186_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140811_5979_INDW_TPE-W_fc-Web_1772191702194.jpg" group-title="Clarity TV | FanCode | Sports",India Women Vs Chinese Taipei Women
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140856_5647_MZ_GW_FC-Web_1772186975986.png" group-title="Clarity TV | FanCode | Sports",Machida Zelvia Vs Gangwon
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140811_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140810_5979_JPN-W_VET-W_fc-Web_1772191702190.jpg" group-title="Clarity TV | FanCode | Sports",Japan Women Vs Vietnam Women
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140810_english.m3u8
+https://fanco.vodep39240327.workers.dev/140856_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
