@@ -7,7 +7,7 @@ const OUTPUT_FILE = "stream.m3u";
 const SOURCES = {
   JIO_M3U: "https://jio-star-dun.vercel.app/jiostar.m3u",  
   HOTSTAR_M3U: "",
-  ZEE5_M3U: "",
+  ZEE5_M3U: "https://join-vaathala1-for-more.vodep39240327.workers.dev/zee5.m3u",
           // updated
   SONYLIV_M3U: "https://raw.githubusercontent.com/ytyou4777/sony-playlist/refs/heads/main/SONY.m3u", // updated
   // FANCODE_JSON: "https://allinonereborn.store/fctest/json/fancode_latest.json",
@@ -178,7 +178,45 @@ function handleJioM3U(data) {
 //   return out.join("\n");
 // }
 
+// ================= ZEE5 M3U HANDLER =================
+function handleZee5M3U(data) {
+  if (!data) return "";
+  if (typeof data !== 'string') {
+    console.warn("⚠️ ZEE5 data is not a string, skipping.");
+    return "";
+  }
 
+  const lines = data.split('\n');
+  const out = [];
+  const defaultGroup = "Clarity TV | ZEE5 OTT";
+
+  for (let line of lines) {
+    line = line.trimRight();
+
+    if (line.startsWith('#EXTINF:')) {
+
+      if (line.includes('group-title=')) {
+        line = line.replace(/group-title="([^"]*)"/, `group-title="${defaultGroup}"`);
+      } 
+      else {
+        const commaIndex = line.indexOf(',');
+        if (commaIndex !== -1) {
+          line = line.slice(0, commaIndex) + ` group-title="${defaultGroup}"` + line.slice(commaIndex);
+        } else {
+          line = line + ` group-title="${defaultGroup}"`;
+        }
+      }
+
+      out.push(line);
+
+    } else {
+      out.push(line);
+    }
+  }
+
+  console.log("✅ ZEE5 M3U processed with group-title ZEE5 OTT.");
+  return out.join('\n');
+}
 
 // ================= SONY M3U HANDLER =================
 function handleSonyM3U(data) {
@@ -366,8 +404,13 @@ async function run() {
   const hotstar = await safeFetch(SOURCES.HOTSTAR_M3U, "Hotstar");
   if (hotstar) out.push(section("Clarity TV | JIOHOTSTAR"), hotstar);
 
-  const zee5 = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
-  if (zee5) out.push(section("Clarity TV | ZEE5 | Live"), zee5);
+ const zee5Data = await safeFetch(SOURCES.ZEE5_M3U, "ZEE5");
+if (zee5Data) {
+  const zee5Content = handleZee5M3U(zee5Data);
+  if (zee5Content) {
+    out.push(section("Clarity TV | ZEE5 OTT"), zee5Content);
+  }
+}
 
   // JIO M3U
   const jioData = await safeFetch(SOURCES.JIO_M3U, "JIO");
