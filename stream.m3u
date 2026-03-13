@@ -10100,22 +10100,10 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 
 # ---------------=== Clarity TV | FanCode | Sports ===-------------------
 
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140719_5655_ALQ_AAS_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al Qadsiah Fc Vs Al Ahli Saudi Fc
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140719_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131103_5427_ALA_VIL_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Deportivo Alaves Vs Villarreal Cf
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/131103_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140951_5489_WRX_SWA_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Wrexham A.f.c. Vs Swansea City A.f.c.
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140951_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/FC_Sports_Default_Football-old-copy.jpg" group-title="Clarity TV | FanCode | Sports",Mirandés Vs Cádiz
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/141221_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/The-Players_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Main Feed   Day 2
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10136,6 +10124,10 @@ https://fanco.vodep39240327.workers.dev/141139_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141031_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140951_5489_WRX_SWA_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Wrexham A.f.c. Vs Swansea City A.f.c.
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140951_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
