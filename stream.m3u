@@ -10104,14 +10104,6 @@ https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009279&uid=8004188626
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/140714_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140721_5655_AFF_AHS_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al Fateh Sc Vs Al Hilal Sfc
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140721_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140720_5655_AKH_ANF_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Al Khaleej Vs Al Nassr Fc
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140720_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131100_5427_RM_ELC_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Real Madrid Vs Elche Cf
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
