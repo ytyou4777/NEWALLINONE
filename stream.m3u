@@ -10108,14 +10108,10 @@ https://fanco.vodep39240327.workers.dev/141308_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141308_hindi.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140952_5489_CVC_SOU_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Coventry City F.c. Vs Southampton F.c.
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140713_5971_MEX_ARG_fc-Web.jpg" group-title="Clarity TV | FanCode | Sports",Argentina Vs Mexico
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/140952_english.m3u8
-#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131109_5427_GIR_ATH_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Girona Fc Vs Athletic Club
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.fancode.com/
-https://fanco.vodep39240327.workers.dev/131109_english.m3u8
+https://fanco.vodep39240327.workers.dev/140713_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140462_5956_BFC_MBSG_FC-Web_1772451336878.jpg" group-title="Clarity TV | FanCode | Sports",Bengaluru Fc Vs Mohun Bagan Super Giant
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10136,6 +10132,14 @@ https://fanco.vodep39240327.workers.dev/140462_bengali.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141177_bengali.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/140953_5489_LEI_QPR_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Leicester City F.c. Vs Queens Park Rangers F.c.
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/140953_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131105_5427_ATL_GEF_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Atletico De Madrid Vs Getafe Cf
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/131105_english.m3u8
 #EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/The-Players_fc-web.jpg" group-title="Clarity TV | FanCode | Sports",Main Feed   Day 3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
@@ -10152,6 +10156,10 @@ https://fanco.vodep39240327.workers.dev/141353_english.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://www.fancode.com/
 https://fanco.vodep39240327.workers.dev/141145_english.m3u8
+#EXTINF:-1 tvg-logo="https://www.fancode.com/skillup-uploads/cms-media/131109_5427_GIR_ATH_FC-Web.png" group-title="Clarity TV | FanCode | Sports",Girona Fc Vs Athletic Club
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://www.fancode.com/
+https://fanco.vodep39240327.workers.dev/131109_english.m3u8
 # =========================================
 # This m3u link is only for educational purposes
 # =========================================
